@@ -1,0 +1,542 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>韩总Java修仙 | 下水道灵魂画手</title><meta name="author" content="DifferentLee"><meta name="copyright" content="DifferentLee"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="环境搭建  IDEA自带JDK吗 下载idea的时候可以选带JDK的或者不带的，默认带JDK的，理论上也可以不用外部的，配置自带的JDK即可，不过Idea自带的是OpenJDK，不是oracle jdk; idea自带jdk，是openjdk，idea是使用Java开发的，所以为了在一台没有配置过Java环境的电脑上也可以运行idea，又考虑了商业版权问题，所以采用了OpenJDK  JDK、J">
+<meta property="og:type" content="article">
+<meta property="og:title" content="韩总Java修仙">
+<meta property="og:url" content="http://example.com/2022/08/21/Java-learning/index.html">
+<meta property="og:site_name" content="下水道灵魂画手">
+<meta property="og:description" content="环境搭建  IDEA自带JDK吗 下载idea的时候可以选带JDK的或者不带的，默认带JDK的，理论上也可以不用外部的，配置自带的JDK即可，不过Idea自带的是OpenJDK，不是oracle jdk; idea自带jdk，是openjdk，idea是使用Java开发的，所以为了在一台没有配置过Java环境的电脑上也可以运行idea，又考虑了商业版权问题，所以采用了OpenJDK  JDK、J">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/DustinPoirier9.jpg">
+<meta property="article:published_time" content="2022-08-21T08:23:00.000Z">
+<meta property="article:modified_time" content="2022-11-06T13:48:13.280Z">
+<meta property="article:author" content="DifferentLee">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/DustinPoirier9.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/08/21/Java-learning/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '韩总Java修仙',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-06 21:48:13'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="下水道灵魂画手" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/WangYouSheng.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 小牛马的主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 小牛马的档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 小牛马的标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 小牛马的分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/./img/DustinPoirier9.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">下水道灵魂画手</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 小牛马的主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 小牛马的档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 小牛马的标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 小牛马的分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">韩总Java修仙</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-21T08:23:00.000Z" title="发表于 2022-08-21 16:23:00">2022-08-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-06T13:48:13.280Z" title="更新于 2022-11-06 21:48:13">2022-11-06</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="韩总Java修仙"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="环境搭建"><a class="markdownIt-Anchor" href="#环境搭建"></a> 环境搭建</h1>
+<h2 id="idea自带jdk吗"><a class="markdownIt-Anchor" href="#idea自带jdk吗"></a> IDEA自带JDK吗</h2>
+<p>下载idea的时候可以选带JDK的或者不带的，默认带JDK的，理论上也可以不用外部的，配置自带的JDK即可，不过Idea自带的是OpenJDK，不是oracle jdk;</p>
+<p>idea自带jdk，是openjdk，idea是使用Java开发的，所以为了在一台没有配置过Java环境的电脑上也可以运行idea，又考虑了商业版权问题，所以采用了OpenJDK</p>
+<h2 id="jdk-jre-jvm之间的关系"><a class="markdownIt-Anchor" href="#jdk-jre-jvm之间的关系"></a> JDK、JRE、JVM之间的关系</h2>
+<ul>
+<li>JDK(Java Development Kit):Java开发工具包，提供给Java程序员使用，包含了JRE，同时还包含了编译器javac与自带的调试工具Jconsole、jstack等。，它提供了Java的开发环境(提供了编译器javac等工具，用于将java文件编译为class文件)和运行环境(提供了JVM和Runtime辅助包，用于解析class文件使其得到运行)。如果你下载并安装了JDK，那么你不仅可以开发Java程序，也同时拥有了运行Java程序的平台。 JDK是整个Java的核心，包括了Java运行环境(JRE)，一堆Java工具tools.jar和Java标准类库 (rt.jar)。当今最流行的两个Java开发工具包(JDK):Oracle JDK和 OpenJDK，常用Oracle JDK。</li>
+<li>JRE(Java Runtime Environment):Java运行时环境，包含了JVM，Java基础类库。是使用Java语言编写程序运行的所需环境。JRE面向Java程序的使用者，而不是开发者。如果你仅下载并安装了JRE，那么你的系统只能运行Java的class程序。JRE是运行Java程序所必须环境的集合，包含JVM标准实现及 Java核心类库。它包括Java虚拟机、Java平台核心类和支持文件。 它不包含开发工具(编译器、调试器等)。</li>
+<li>JVM(Java Virtual Machine)：Java虚拟机，运行Java代码。不同的操作系统需要安装不同版本的JVM，而JVM是JDK的子集，因此，JDK也有对应不同操作系统的各种版本。JVM屏蔽底层运行平台的差别，从而实现“一次编译，到处运行”。</li>
+</ul>
+<p>JDK=JRE+开发工具集(比如:javac)<br />
+JRE=JVM+JavaSE标准类库</p>
+<p>综上，JDK是JRE的超集，而JRE又是JVM的超集</p>
+<h2 id="javase-javaee-javame"><a class="markdownIt-Anchor" href="#javase-javaee-javame"></a> JavaSE、JavaEE、JavaME</h2>
+<p>Java是一门编程语言,  分为 JavaSE、JavaEE、JavaME 三大版本.</p>
+<ul>
+<li>
+<p>JavaSE (Java Platform，Standard Edition, 标准版) also known as Java 2 Platform</p>
+<ol>
+<li>可以开发和部署在桌面、服务器、嵌入式环境和实时环境中使用的 Java 应用程<br />
+序。</li>
+<li>Java SE 包含了支持 Java Web 服务开发的类是EE，和ME的基础。javaSE是java的基石，如果将java程序想象成一座高楼大厦，那么javaSE就是地基。</li>
+<li>主要做一般的java应用, 比如, 应用软件/ QQ之类的通信软件等等.</li>
+<li>此前叫做J2SE</li>
+</ol>
+</li>
+<li>
+<p>Java EE (Java Platform，Enterprise Edition, 企业版)<br />
+是Sun公司为企业级应用推出的标准平台。JavaEE是个大杂烩，包括Applet、EJB、JDBC、JNDI、Servlet、JSP等技术的标准，运行在一个完整的应用服务器上，用来开发大规模、分布式、健壮的网络应用。<br />
+其实是一套规范，就是用java语言做企业开发, 比如公司网站, 企业解决方案等<br />
+在JavaSE的基础上构建<br />
+提供Web 服务、组建模型、管理和通信API.可以用来实现企业级的面向服务体系结构(service-oriented architecture,SOA)和web2.0应用程序<br />
+此前叫做J2EE</p>
+<p><strong>JavaWeb</strong><br />
+主要指以Java语言为基础<br />
+可以粗略地认为JavaWeb就是JavaEE的一部分<br />
+利用JavaEE中的Servlet, JSP等技术开发动态页面, 方便用户通过浏览器与服务器后台交互<br />
+Java Web应用程序可运行在一个轻量级的Web服务器中，比如Tomcat。</p>
+</li>
+<li>
+<p>Java ME (Java Platform，Micro Edition, 微型版)<br />
+写移动端(移动设备和嵌入式设备（比如手机、PDA、电视机顶盒和打印机）。javaME这一块只需要了解就可以了，因为现在很少有使用这个东西的了，</p>
+</li>
+</ul>
+<h2 id="sdk-与-jdk的区别"><a class="markdownIt-Anchor" href="#sdk-与-jdk的区别"></a> SDK 与 JDK的区别</h2>
+<ul>
+<li>SDK（Software Development Kit） 软件开发工具包，是一个相当广泛的名词， 可以这么说辅助开发某一类软件的相关文档，范例和工具的集合都可以叫做“SDK”。SDK是一系列文件的组合，它为软件的开发提供了一个平台。</li>
+<li>JDK（Java Development Kit）Java 开发工具包，是针对Java开发的产品。 JDK是SDK的一个子集，因为它是开发java程序的一个平台，开发其他程序的SDK可以没有JDK。比如你下载了一个软件平台eclipse-SDK-3.2.2-win32.zip，它本身里面是没有JDK的。但是只要开发Java程序就必须使用JDK（Java EE和Java SE）</li>
+</ul>
+<h1 id="day-1"><a class="markdownIt-Anchor" href="#day-1"></a> Day 1</h1>
+<h2 id="java是编译型语言还是解释型语言"><a class="markdownIt-Anchor" href="#java是编译型语言还是解释型语言"></a> java是编译型语言还是解释型语言？</h2>
+<p>现在用编译型、解释型来分类编程语言已经有点力不从心了。java的javac编译器(全称java compiler)先将其编译为class文件，也就是字节码；然后将字节码交由jvm(java虚拟机)解释执行；所以很多地方都说“java是一种半编译、半解释执行”的语言；现在倾向于避开把编程语言描述为“编译型”或者“解释性”的。</p>
+<h2 id="java诞生"><a class="markdownIt-Anchor" href="#java诞生"></a> java诞生</h2>
+<ul>
+<li>1990年 SUN公司启动绿色计划，希望在一些设备，比如电视、冰箱、微波炉、机顶盒上编程。</li>
+<li>1992年创建oak(橡树)语言，最开始叫“Oak”，是一种在硅谷很常见的橡树。但开发公司在申请注册商标时发现，Oak已经被使用了。如果没有一个合适的名字，他们不得不延后这个语言的面世。没有办法，开发公司只好召开了一个命名征集会，在命名顾问一系列名字之后，最终，使用了Java这一名字。Java其实是印度尼西亚爪哇岛的英文名称，当地因盛产咖啡而闻名。据说，命名者就是在与同事品尝Java咖啡时得到的灵感。</li>
+<li>1994年gosling在硅谷大会上演示Java一个可以在网页上展示动态图的功能震惊了世界，当时网页只能展示静态图。</li>
+<li>1995年SUN正式发布Java第一个版本</li>
+<li>2009甲骨文(Oracle)公司宣布收收购SUN。2011，发布java7。目前java是Oracle的，也是由它维护的。</li>
+<li>2014发布java8，该版本也是现在企业用的最广泛的。因为该版本∈LTS(long-term-support)，即长期支持版。Java11也是LTS，像什么第9版第10版，第12版第13版，都不是LTS，都已经不可获得了，所以8和11版本也是现在企业用的最广泛的。因此我们一般学习8和11的特性。</li>
+</ul>
+<h2 id="第一个程序入门"><a class="markdownIt-Anchor" href="#第一个程序入门"></a> 第一个程序入门</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是java的快速入门，演示java的开发步骤</span></span><br><span class="line"><span class="comment">//对代码的相关说明</span></span><br><span class="line"><span class="comment">//1. public class HelloWorld是一个java 类，这也是我们创建时点类的原因，是一个public公有类</span></span><br><span class="line"><span class="comment">//2. HelloWorld&#123;&#125; 表示一个类的开始和结束。</span></span><br><span class="line"><span class="comment">//3. public static void main(String[] args) 表示一个主方法，即我们程序的入口。</span></span><br><span class="line"><span class="comment">//4. main()&#123;&#125; 表示方法的开始和结束。</span></span><br><span class="line"><span class="comment">//5. System.out.println(&quot;Hello World !&quot;); 表示输出&quot;Hello World !&quot;到屏幕。</span></span><br><span class="line"><span class="comment">//6. ; 表示语句的结束。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="comment">// 编写一个main方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World !!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="java运行机制"><a class="markdownIt-Anchor" href="#java运行机制"></a> JAVA运行机制</h2>
+<p>.java 文件称为源文件，经过javac编译为 .class 文件，又称字节码文件，再装载给JVM运行。修改源文件记得重新编译为新的字节码文件。</p>
+<h2 id="java开发注意事项"><a class="markdownIt-Anchor" href="#java开发注意事项"></a> JAVA开发注意事项</h2>
+<ol>
+<li>JAVA源文件以.java为扩展名，不要乱改。</li>
+<li>JAVA语言严格区分大小写。</li>
+<li>JAVA方法由一条条语句构成，每个语句以 ; 结束。</li>
+<li>{} 只能成对出现。</li>
+<li>源文件的基本组成部分是类(class)，如HelloWorld类</li>
+<li>一个源文件中最多只能有一个public类，其它类的个数不限。</li>
+<li>如果源文件中包含一个public类，则文件名必须按照该类名命名。</li>
+<li>JAVA应用程序的执行入口是main()方法，它有固定的书写格式，即：public static void main(String[] args) {} ，不得乱改。</li>
+<li>也可以将main()方法写在非public类中，然后指定运行非public类，这样入口方法就是非public的main方法。一个class文件中只能有一个mian()方法，否则在编译运行的时候会出错。</li>
+<li>如果一个java文件中有多个类,除去内部类,剩下的每个普通类都会生成一个class文件。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是java的快速入门，演示java的开发步骤</span></span><br><span class="line"><span class="comment">//对代码的相关说明</span></span><br><span class="line"><span class="comment">//1. public class HelloWorld是一个java 类，这也是我们创建时点类的原因，是一个public公有类</span></span><br><span class="line"><span class="comment">//2. HelloWorld&#123;&#125; 表示一个类的开始和结束。</span></span><br><span class="line"><span class="comment">//3. public static void main(String[] args) 表示一个主方法，即我们程序的入口。</span></span><br><span class="line"><span class="comment">//4. main()&#123;&#125; 表示方法的开始和结束。</span></span><br><span class="line"><span class="comment">//5. System.out.println(&quot;Hello World !&quot;); 表示输出&quot;Hello World !&quot;到屏幕。</span></span><br><span class="line"><span class="comment">//6. ; 表示语句的结束。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="comment">// 编写一个main方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World !!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Dog也是一个类，</span></span><br><span class="line"><span class="comment">//编译后，每一个类，都对应一个.class文件</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span>&#123;</span><br><span class="line">    <span class="comment">//也可以将main()方法写在非public类中，然后指定运行非public类，这样入口方法就是非public的main方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello Dog !!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Cat</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello Cat !!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="java常见错误"><a class="markdownIt-Anchor" href="#java常见错误"></a> JAVA常见错误</h2>
+<p>常见的语法错误是最容易修改的，因为编译器一般会报错并给出原因，虽然有时候原因会很笼统。业务错误和环境错误更难改，业务错误指语法没有错误，编译不会报错，但是代码逻辑写错了，达不到业主需求。环境错误指，我在本地跑没有任何问题，在另一台机器上run就报错。</p>
+<h2 id="comment"><a class="markdownIt-Anchor" href="#comment"></a> comment</h2>
+<ul>
+<li>单行注释：//注释文字</li>
+<li>多行注释：/* 注释文字 */，注意，多行注释不允许嵌套使用，即 / * 注释文字 * /里面不允许再有/ *</li>
+<li>文档注释：注释内容可以被JDK提供的工具 javadoc 所解析，生成一套以网页文件形式体现的该程序的说明文档，一般写在类。文档注释用的还是蛮多的。文档注释只放在类、接口、成员变量、方法之前，因为 Javadoc 只处理这些地方的文档注释，而忽略其它地方的文档注释。<br />
+Javadoc 是 Sun 公司提供的一种工具，它可以从程序源代码中抽取类、方法、成员等注释，然后形成一个和源代码配套的 API 帮助文档。也就是说，只要在编写程序时以一套特定的标签注释，在程序编写完成后，通过 Javadoc 就形成了程序的 API 帮助文档。API 帮助文档相当于产品说明书，而说明书只需要介绍那些供<strong>用户</strong>使用的部分，所以 Javadoc 默认只提取 public、protected 修饰的部分。如果要提取 private 修饰的部分，需要使用 -private。</li>
+</ul>
+<h2 id="java代码规范"><a class="markdownIt-Anchor" href="#java代码规范"></a> java代码规范</h2>
+<p>截止目前，我们所学甚少，所以java代码规范先讲8条，后面会增加。</p>
+<ol>
+<li>类、方法的注释，要以 javadoc 的方式来写，因为 Javadoc 只处理这些地方的文档注释，而忽略其它地方的文档注释。JAVA的设计者就是经常用文档注释；javadoc往往给<strong>用户</strong>看的。</li>
+<li>单行注释，、多行注释，往往是给<strong>代码的维护者</strong>看的，着重告诉读者为什么要这么写。</li>
+<li>使用TAB键，实现代码的缩进和自动补全，使用shift+tab，可以取消一个缩进；</li>
+<li>运算符两边习惯性加一个空格(Spacebar)，JAVA设计者就是这么做的。如 int a = 1 + 2;</li>
+<li>源文件使用UTF-8编码；</li>
+<li>一行的宽度不超过80个字符，太宽了读起来不方便；</li>
+<li>代码编写推荐行尾风格，但是次行风格也是正确的；
+<ul>
+<li>行尾风格：<br />
+if (a &gt; b){<br />
+a=;<br />
+}</li>
+<li>次行风格：<br />
+if (a &gt; b)<br />
+{<br />
+a=;<br />
+}</li>
+</ul>
+</li>
+</ol>
+<h1 id="day-2"><a class="markdownIt-Anchor" href="#day-2"></a> Day 2</h1>
+<h2 id="dos命令是什么"><a class="markdownIt-Anchor" href="#dos命令是什么"></a> DOS命令是什么</h2>
+<p>DOS : Disk Operating System 磁盘操作系统</p>
+<p>我们在控制台输入DOS指令时，控制台会把指令发送给DOS系统，DOS系统会对windows文件系统进行相应的操作。</p>
+<p>Linux下用DOS命令比较多。</p>
+<h2 id="相对路径和绝对路径"><a class="markdownIt-Anchor" href="#相对路径和绝对路径"></a> 相对路径和绝对路径</h2>
+<p>文件夹在编程里面称为目录。</p>
+<p>比如，D盘下面有abc1文件夹和abc2文件夹，abc1文件夹下面有一个test1文件夹，abc2文件夹下面有一个test2文件夹.</p>
+<ul>
+<li>相对路径：从当前目录(当前文件夹)开始定位，形成的一个路径。</li>
+<li>绝对路径：从顶级目录(例子中是D盘)，开始定位，形成的一个路径。</li>
+</ul>
+<p>如果当前目录在test1，我们想访问test2，</p>
+<ul>
+<li>相对路径是 …\abc2\test2</li>
+<li>绝对路径是 D:\abc2\test2<br />
+…\是返回上一级目录。</li>
+</ul>
+<h2 id="java中号的使用"><a class="markdownIt-Anchor" href="#java中号的使用"></a> JAVA中+号的使用</h2>
+<ol>
+<li>当+号左右两边都是数值型时，则做数学上的加法运算。</li>
+<li>当+号左右两边有任何一方为字符串时，则做拼接运算。<br />
+举例：</li>
+</ol>
+<ul>
+<li>100+98        输出：198</li>
+<li>“100”+98      输出：“10098”</li>
+<li>100+3+“hello” 输出：“103hello”</li>
+<li>“hello”+100+3 输出：“hello1003”</li>
+</ul>
+<h2 id="java的数据类型"><a class="markdownIt-Anchor" href="#java的数据类型"></a> JAVA的数据类型</h2>
+<p>JAVA是强类型语言，分为两种，</p>
+<ol>
+<li>基本数据类型：
+<ol>
+<li>数值型：
+<ol>
+<li>整数类型：
+<ol>
+<li>byte:1个字节；</li>
+<li>short:2个字节；</li>
+<li>int:4个字节；</li>
+<li>long:8个字节；</li>
+</ol>
+</li>
+<li>浮点类型：
+<ol>
+<li>float:4个字节；</li>
+<li>double:8个字节；</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>字符型：char:2个字节(C语言里char类型占用1个字节)；</li>
+<li>布尔类型：boolean:占用1个字节，存放true,false。</li>
+</ol>
+</li>
+<li>引用数据类型(复杂数据类型)：
+<ol>
+<li>类(class);(string就是类)</li>
+<li>接口(interface);</li>
+<li>数组([]);</li>
+</ol>
+</li>
+</ol>
+<h2 id="java整型细节"><a class="markdownIt-Anchor" href="#java整型细节"></a> JAVA整型细节</h2>
+<ul>
+<li>JAVA里面的各种整型的长度是固定的，不受具体OS的影响，以保证java程序的可移植性，这一点与C不同，C语言里int和long的长度取决于编译器和CPU。</li>
+<li>java中通常用int声明整型即可，除非超出int范围了。如果我们不能保证一定不会超过int范围，就用long。</li>
+<li>java的整型的字面量默认为int型(这一点和C一样)，如果声明long类型，则字面量后面必须加上&quot;l&quot;或&quot;L&quot;，建议大写L结尾。比如long a=2147483648，则默认a是int型，会超出int范围而报错，long a=2147483648L a才是long型。</li>
+</ul>
+<h1 id="day-3"><a class="markdownIt-Anchor" href="#day-3"></a> Day 3</h1>
+<h2 id="java浮点数细节"><a class="markdownIt-Anchor" href="#java浮点数细节"></a> JAVA浮点数细节</h2>
+<ul>
+<li>与整型类似，java浮点数也是固定长度，和OS无关；</li>
+<li>JAVA的浮点数的字面量默认是double型，声明float时，字面量必须加“f”或“F”，
+<ol>
+<li>float a=1.1; 是错的，因为1.1默认是double是8个字节，而float是4个字节；</li>
+<li>float b=1.1F; 是对的；</li>
+<li>double c=1.1F; 是对的；</li>
+</ol>
+</li>
+<li>浮点数如果是0.几，允许把个位的0省略。比如double a=0.52，可以写成dpuble a= .52</li>
+<li>通常情况下，我们一般使用double型，而且JAVA也是默认double型。</li>
+<li>由于计算机的缺陷，导致小数在计算机内部并不能被准确表达，这一点已经在C语言里了解过了，所以不能轻易将浮点数的运算结果和某个小数做相等判断，应该用两值之差的绝对值做精度判断，小于一个很小的数就能得出两个浮点数相等。但是如果是 double a=2.7; double b=2.7; a和b可以直接判断相等，因为这是直接赋的。</li>
+</ul>
+<h2 id="java-api文档"><a class="markdownIt-Anchor" href="#java-api文档"></a> JAVA API文档</h2>
+<p>API:(Application Programming Interface),即应用程序编程接口，是java设计者给我们提供的一些类，还有一些方法。也即java标准类库提供的函数，android开发的api是指android sdk函数库。也可以解释为一些预先定义的接口，目的是提供应用程序与开发人员基于某软件或硬件的以访问一组例程的能力，而又无需访问源码，或理解内部工作机制的细节。还有一个很泛的解释，即可以直接调用的东西都可以称作API。</p>
+<p>JAVA API文档：是指把这些API收录在一个字典里，这个字典就叫JAVA API文档。</p>
+<p>JAVA语言提供了大量基础类，Oracle也为这些基础类提供了相应的API文档。</p>
+<p>想知道怎么使用JAVA API文档，有必要先了解JAVA类的组织形式。</p>
+<p>JAVA类的组织形式：</p>
+<ul>
+<li>
+<p>JDK 8、11、17</p>
+<ol>
+<li>包1</li>
+<li>包2</li>
+<li>包3</li>
+<li>……
+<ol>
+<li>异常</li>
+<li>接口1</li>
+<li>接口2</li>
+<li>接口3</li>
+<li>……</li>
+<li>类1</li>
+<li>类2</li>
+<li>类3</li>
+<li>……
+<ol>
+<li>字段(又叫属性又叫成员变量)</li>
+<li>构造器(构造方法)</li>
+<li>成员方法(方法)</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>方法一：想查找一个方法，可以先弄清在哪个包下面，再找对应的类，就能找到这个方法。</p>
+</li>
+<li>
+<p>方法二：直接搜索。</p>
+</li>
+</ul>
+<h2 id="java字符型介绍"><a class="markdownIt-Anchor" href="#java字符型介绍"></a> JAVA字符型介绍</h2>
+<p>字符类型char占2个字节，可以用来表示单个字符。可以存放汉字也可以存放英文。<br />
+多个字符我们可以用字符串string。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="comment">// 编写一个main方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">char</span> <span class="variable">c1</span> <span class="operator">=</span> <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">        <span class="type">char</span> <span class="variable">c2</span> <span class="operator">=</span> <span class="string">&#x27;韩&#x27;</span>;</span><br><span class="line">        <span class="type">char</span> <span class="variable">c3</span> <span class="operator">=</span> <span class="string">&#x27;\t&#x27;</span>;</span><br><span class="line">        <span class="type">char</span> <span class="variable">c4</span> <span class="operator">=</span> <span class="number">97</span>;</span><br><span class="line">        System.out.println(c1);</span><br><span class="line">        System.out.println(c2);</span><br><span class="line">        System.out.println(c3);</span><br><span class="line">        System.out.println(c4);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：<br />
+a<br />
+韩</p>
+<p>a</p>
+<h2 id="字符型细节"><a class="markdownIt-Anchor" href="#字符型细节"></a> 字符型细节</h2>
+<ol>
+<li>字符型字面量是用‘’引起的，如果用“”，则代表字符串类型，编译器会报告错误；</li>
+<li>逃逸字符看起来是2个字符，其实是1个字符；</li>
+<li>JAVA用的是Unicode编码规则；</li>
+<li>char的本质是一个整数型，它可以参与运算，这一点和C是一样的，它在计算机内存里面就是个数字，取决于我们输出时用整数型格式还是字符型格式。但是JAVA里char占2个字节，C里面占1个字节。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="comment">// 编写一个main方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">/* 和C语言的char本质是一样的，输出什么取决于我们怎么选择什么格式，但在计算机里面始终是个整数，</span></span><br><span class="line"><span class="comment">        和C不同的是，C的char类型窄字符采用ASCII码，JAVA采用Unicode；C的char占1个字节，java的char占2个字节*/</span></span><br><span class="line">        <span class="type">char</span> <span class="variable">c1</span> <span class="operator">=</span> <span class="number">97</span>;</span><br><span class="line">        <span class="type">char</span> <span class="variable">c2</span> <span class="operator">=</span> <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">        <span class="type">char</span> <span class="variable">c3</span> <span class="operator">=</span> <span class="string">&#x27;韩&#x27;</span>;</span><br><span class="line">        <span class="type">char</span> <span class="variable">c4</span> <span class="operator">=</span> <span class="number">38889</span>;</span><br><span class="line">        System.out.println(c1);</span><br><span class="line">        System.out.println((<span class="type">int</span>)c2);</span><br><span class="line">        System.out.println((<span class="type">double</span>)c2);</span><br><span class="line">        System.out.println((<span class="type">int</span>)c3);</span><br><span class="line">        System.out.println(c3);</span><br><span class="line">        System.out.println(c4);</span><br><span class="line">        System.out.println(<span class="string">&#x27;a&#x27;</span> + <span class="number">10</span>);</span><br><span class="line">        <span class="type">char</span> <span class="variable">c5</span> <span class="operator">=</span> <span class="string">&#x27;b&#x27;</span> + <span class="number">1</span>;</span><br><span class="line">        System.out.println(c5);</span><br><span class="line">        System.out.println((<span class="type">int</span>)c5);</span><br><span class="line">        <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">        System.out.println(c);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：<br />
+a<br />
+97<br />
+97.0<br />
+38889<br />
+韩<br />
+韩<br />
+107<br />
+c<br />
+99<br />
+97</p>
+<h2 id="boolean"><a class="markdownIt-Anchor" href="#boolean"></a> boolean</h2>
+<p>在JAVA里面，不允许用0或者非0的整数代替false或true，这一点与C语言不同。在JAVA里，bool类型只能是true 或者 false，不能是其它值。</p>
+<ul>
+<li>boolean isPass = true;  √<br />
+if (isPass = ture){}</li>
+<li>boolean isPass = 1;     ×<br />
+if (isPass = ture){}</li>
+</ul>
+<h1 id="day-4"><a class="markdownIt-Anchor" href="#day-4"></a> Day 4</h1>
+<h2 id="java-自动类型转换"><a class="markdownIt-Anchor" href="#java-自动类型转换"></a> JAVA 自动类型转换</h2>
+<p>当JAVA程序在进行赋值或者运算时，精度小的类型<strong>自动</strong>转换为精度大的数据类型。</p>
+<p>数据类型按精度从小到大按下面2条路线可以实现自动转换：</p>
+<ol>
+<li>char——&gt;int——&gt;long——&gt;float——&gt;double</li>
+<li>byte——&gt;short——&gt;int——&gt;long——&gt;float——&gt;double</li>
+</ol>
+<ul>
+<li>
+<p>byte 和 short 不会和 char 类型之间自动转换。<br />
+byte b1 = 10;<br />
+<s>char c1 = b1;</s>   ×<br />
+虽然char容量比byte大，但是也不能这样赋值，原因就是byte类型不能自动转成char类型。编译器就是这么规定的，可以把它当成一个规则来理解。<br />
+short b2 = 10;<br />
+<s>char c1 = b2;</s>   ×<br />
+原因同上</p>
+</li>
+<li>
+<p>byte char short 三个类型的数，不管是同类型之间的运算，还是不同类型混合运算，在运算时首先转为int型才会运算。<br />
+byte b2 = 1;<br />
+short s1 = 1;<br />
+<s>short s2 = b1 + s1;</s>  √<br />
+int s2 = b1 + s1;        ×<br />
+byte b3 = 1;<br />
+byte b4 = 1;<br />
+<s>byte b5 = b3 + b4;</s>   × 因为已经转为int了<br />
+int s3 = b3 + s4;        √</p>
+</li>
+<li>
+<p>int a = ‘a’;  对的，而且输出a是97，而且这个97在计算机内部占4个字节，说明char已经自动转换为int了，等价于：int a = 97;</p>
+</li>
+<li>
+<p>double b = 80; 对的，而且输出80.0，说明已经自动转换了.</p>
+</li>
+<li>
+<p>有多种类型数据混合运算时，系统首先将所有数据转换成容量最大的那种数据类型，然后再1进行计算。</p>
+</li>
+<li>
+<p>把容量大的赋值给容量小的数据类型，编译器会报错。</p>
+</li>
+<li>
+<p>byte b1 = 10;<br />
+这个语句是对的，之前虽然说过java的整型的字面量默认为int型，我们猜测int赋给byte会报错，然而编译器并未报错，原因是，编译器会先检查该字面量10是否在byte范围内，如果在就可以；如果不行，再进行类型检查。这一点和C一样，比如C里面将一个double赋给float，先将双精度转为单精度，即只取6-7位有效数字，存储到float型变量的4个字节中，当double的数值大小不超出float的数值范围时，也不会报错，只是IDE会给警告。</p>
+</li>
+<li>
+<p>int n1 = 1;<br />
+byte b2 = n1;<br />
+这样编译就过不了，因为1在内存中已经是4个字节存放了，再赋给一个字节的b2就小了，所以如果是变量赋值，则不再检查是否在数据类型范围内，而是直接做类型检查。<br />
+但是可以<strong>强制类型转</strong>换：<br />
+byte b2 = (byte)n1;    √</p>
+</li>
+<li>
+<p>JAVA/C++ 在类型转换上和C不同，虽然三种语言都是强类型语言，但JAVA/C<ins>类型检查要比C严格，举例，C语言中，int a = 1.1; 不会报错，而且会自动向下取整，最后a=1，我们还利用C语言的这个弱点实现了一些编程小套路，但是在JAVA/C</ins>中，这种把double赋给int是绝对不行的；再比如，调用函数时，给的参数类型和函数定义的参数类型不匹配，则C语言编译器会偷偷进行类型转换再传递给函数，但这可能不是你所期望的，所以这是C语言传统上最大的漏洞，JAVA/C++则会报错。</p>
+</li>
+<li>
+<p>boolean不参与类型的自动转换。<br />
+boolean pass = true;<br />
+<s>int num = pass;</s>  会报错</p>
+</li>
+</ul>
+<h2 id="java-强制类型转换"><a class="markdownIt-Anchor" href="#java-强制类型转换"></a> JAVA 强制类型转换</h2>
+<p>强制类型转换是自动类型转换的逆过程，将容量大的数据类型转为容量小的数据类型，但是一般会造成精度降低或者溢出，所以一般我们都是有意为之才这么做。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="comment">// 编写一个main方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n1</span> <span class="operator">=</span> (<span class="type">int</span>)<span class="number">1.9</span>;  <span class="comment">//强制类型转换造成精度降低</span></span><br><span class="line">        System.out.println(<span class="string">&quot;n1=&quot;</span> + n1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：n1=1 ，造成精度降低<br />
+int n2 = 2000;<br />
+byte b1 = (byte)n2;<br />
+System.out.println(“b1=” + b1);<br />
+输出 b1 = -48 ,造成数据溢出。</p>
+<ul>
+<li>强制转换只针对最近的操作数有效，往往会使用小括号提升优先级，<br />
+<s>int x = (int)10 * 3.5 + 6;</s><br />
+编译会报错，因为这里只会把10转换成int，3.5还是double，所以最后结果是dounle，<br />
+int x = (int)(10 * 3.5 + 6);<br />
+这么写是对的</li>
+</ul>
+<h2 id="string和基本数据类型之间的转换"><a class="markdownIt-Anchor" href="#string和基本数据类型之间的转换"></a> String和基本数据类型之间的转换</h2>
+<p>string是引用数据类型，是一种类，但我们优势需要将基本数据类型和string类型相互转换。</p>
+<ul>
+<li>基本数据类型转string：<br />
+语法：将基本数据类型的值+&quot;&quot;即可</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="comment">// 编写一个main方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n1</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line">        <span class="type">float</span> <span class="variable">n2</span> <span class="operator">=</span> <span class="number">100F</span>;</span><br><span class="line">        <span class="type">double</span> <span class="variable">n3</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">n4</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> n1 + <span class="string">&quot;&quot;</span>; <span class="comment">//当+号左右两边有任何一方为字符串时，则做拼接运算。</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> n2 + <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s3</span> <span class="operator">=</span> n3 + <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s4</span> <span class="operator">=</span> n4 + <span class="string">&quot;&quot;</span>;</span><br><span class="line">        System.out.println(s1 + <span class="string">&quot; &quot;</span> + s2 + <span class="string">&quot; &quot;</span> + s3 + <span class="string">&quot; &quot;</span> + s4);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：100 100.0 100.0 true</p>
+<ul>
+<li>String转基本数据类型<br />
+在java里每一个基本数据类型都对应一个包装类，包装类提供一个方法，叫parseXX，XX是相应的数据类型，用这个方法就能转换成对应类型。
+<ul>
+<li>String转char类型只能取出String的一个字符，因为char只能存一个字符</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="comment">// 编写一个main方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s5</span> <span class="operator">=</span> <span class="string">&quot;123&quot;</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> Integer.parseInt(s5);</span><br><span class="line">        <span class="type">double</span> <span class="variable">b</span> <span class="operator">=</span> Double.parseDouble(s5);</span><br><span class="line">        <span class="type">float</span> <span class="variable">c</span> <span class="operator">=</span> Float.parseFloat(s5);</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">d</span> <span class="operator">=</span> Boolean.parseBoolean(<span class="string">&quot;true&quot;</span>);</span><br><span class="line">        System.out.println(a);</span><br><span class="line">        System.out.println(b);</span><br><span class="line">        System.out.println(c);</span><br><span class="line">        System.out.println(d);</span><br><span class="line">        System.out.println(s5.charAt(<span class="number">0</span>));</span><br><span class="line">        System.out.println(s5.charAt(<span class="number">1</span>));</span><br><span class="line">        System.out.println(s5.charAt(<span class="number">2</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：<br />
+123<br />
+123.0<br />
+123.0<br />
+true<br />
+1<br />
+2<br />
+3</p>
+<p>int这个基本数据类型对应的包装类就是Integer,这个包装类提供一个parseInt方法可以把String转换成int型。</p>
+<ul>
+<li>在将String类型转成基本数据类型时，要确保String类型能够转成有效的数据，比如可以把“123”转成一个整数，但是不能把“hello”转成一个整数，否则虽然编译能过，但是执行时就会抛出异常，程序就会终止。反之，基本数据类型转字符串不存在这个问题。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">DifferentLee</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/08/21/Java-learning/">http://example.com/2022/08/21/Java-learning/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">下水道灵魂画手</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/./img/DustinPoirier9.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/30/FunctionLogin-1/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">小作业1-登录功能(控制台)</div></div></a></div><div class="next-post pull-right"><a href="/2022/08/07/Code-chapter13/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier20.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">走马观花《Code》第13章-如何实现减法</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/WangYouSheng.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">DifferentLee</div><div class="author-info__description">一次编译，到处运行</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/DifferentLee" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:liyiraner@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.facebook.com/profile.php?id=100083266883262" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a><a class="social-icon" href="https://www.instagram.com/accounts/login/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram-square"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text"> 环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#idea%E8%87%AA%E5%B8%A6jdk%E5%90%97"><span class="toc-number">1.1.</span> <span class="toc-text"> IDEA自带JDK吗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jdk-jre-jvm%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">1.2.</span> <span class="toc-text"> JDK、JRE、JVM之间的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javase-javaee-javame"><span class="toc-number">1.3.</span> <span class="toc-text"> JavaSE、JavaEE、JavaME</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sdk-%E4%B8%8E-jdk%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.4.</span> <span class="toc-text"> SDK 与 JDK的区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day-1"><span class="toc-number">2.</span> <span class="toc-text"> Day 1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E6%98%AF%E7%BC%96%E8%AF%91%E5%9E%8B%E8%AF%AD%E8%A8%80%E8%BF%98%E6%98%AF%E8%A7%A3%E9%87%8A%E5%9E%8B%E8%AF%AD%E8%A8%80"><span class="toc-number">2.1.</span> <span class="toc-text"> java是编译型语言还是解释型语言？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E8%AF%9E%E7%94%9F"><span class="toc-number">2.2.</span> <span class="toc-text"> java诞生</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%85%A5%E9%97%A8"><span class="toc-number">2.3.</span> <span class="toc-text"> 第一个程序入门</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-number">2.4.</span> <span class="toc-text"> JAVA运行机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E5%BC%80%E5%8F%91%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.5.</span> <span class="toc-text"> JAVA开发注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF"><span class="toc-number">2.6.</span> <span class="toc-text"> JAVA常见错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#comment"><span class="toc-number">2.7.</span> <span class="toc-text"> comment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83"><span class="toc-number">2.8.</span> <span class="toc-text"> java代码规范</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day-2"><span class="toc-number">3.</span> <span class="toc-text"> Day 2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dos%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">3.1.</span> <span class="toc-text"> DOS命令是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-number">3.2.</span> <span class="toc-text"> 相对路径和绝对路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E4%B8%AD%E5%8F%B7%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">3.3.</span> <span class="toc-text"> JAVA中+号的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.4.</span> <span class="toc-text"> JAVA的数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E6%95%B4%E5%9E%8B%E7%BB%86%E8%8A%82"><span class="toc-number">3.5.</span> <span class="toc-text"> JAVA整型细节</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day-3"><span class="toc-number">4.</span> <span class="toc-text"> Day 3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E6%B5%AE%E7%82%B9%E6%95%B0%E7%BB%86%E8%8A%82"><span class="toc-number">4.1.</span> <span class="toc-text"> JAVA浮点数细节</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java-api%E6%96%87%E6%A1%A3"><span class="toc-number">4.2.</span> <span class="toc-text"> JAVA API文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E5%AD%97%E7%AC%A6%E5%9E%8B%E4%BB%8B%E7%BB%8D"><span class="toc-number">4.3.</span> <span class="toc-text"> JAVA字符型介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%9E%8B%E7%BB%86%E8%8A%82"><span class="toc-number">4.4.</span> <span class="toc-text"> 字符型细节</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#boolean"><span class="toc-number">4.5.</span> <span class="toc-text"> boolean</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day-4"><span class="toc-number">5.</span> <span class="toc-text"> Day 4</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#java-%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">5.1.</span> <span class="toc-text"> JAVA 自动类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java-%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">5.2.</span> <span class="toc-text"> JAVA 强制类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#string%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-number">5.3.</span> <span class="toc-text"> String和基本数据类型之间的转换</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/09/24/Web_PHP_Learn/" title="Web程序设计"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Web程序设计"/></a><div class="content"><a class="title" href="/2022/09/24/Web_PHP_Learn/" title="Web程序设计">Web程序设计</a><time datetime="2022-09-24T07:42:10.000Z" title="发表于 2022-09-24 15:42:10">2022-09-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/19/C_Print_icon/" title="C语言控制台打印图标小技巧"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言控制台打印图标小技巧"/></a><div class="content"><a class="title" href="/2022/09/19/C_Print_icon/" title="C语言控制台打印图标小技巧">C语言控制台打印图标小技巧</a><time datetime="2022-09-18T16:00:00.000Z" title="发表于 2022-09-19 00:00:00">2022-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/05/CLion-Single-File-Execution/" title="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题"/></a><div class="content"><a class="title" href="/2022/09/05/CLion-Single-File-Execution/" title="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题">解决CLion中建立多个c/cpp文件(多个main函数共存)的问题</a><time datetime="2022-09-05T07:08:12.000Z" title="发表于 2022-09-05 15:08:12">2022-09-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/30/FunctionLogin-1/" title="小作业1-登录功能(控制台)"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="小作业1-登录功能(控制台)"/></a><div class="content"><a class="title" href="/2022/08/30/FunctionLogin-1/" title="小作业1-登录功能(控制台)">小作业1-登录功能(控制台)</a><time datetime="2022-08-30T10:30:31.000Z" title="发表于 2022-08-30 18:30:31">2022-08-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/21/Java-learning/" title="韩总Java修仙"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="韩总Java修仙"/></a><div class="content"><a class="title" href="/2022/08/21/Java-learning/" title="韩总Java修仙">韩总Java修仙</a><time datetime="2022-08-21T08:23:00.000Z" title="发表于 2022-08-21 16:23:00">2022-08-21</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/./img/DustinPoirier9.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By DifferentLee</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">见到您，我高兴坏了😍</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script id="canvas_nest" defer="defer" color="255,255,0" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="咱,俩,谁,是,小,牛,马" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>走马观花《Code》第13章-如何实现减法 | 下水道灵魂画手</title><meta name="author" content="DifferentLee"><meta name="copyright" content="DifferentLee"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="继电器可以连接起来构成二进制加法器，那么减法器怎么实现？其实加法和减法在某些方面是相互补充的，但两者计算机制不同，加法用到进位这种机制，从最右边一列向左进位；减法不用进位而是借位。 比如,253-176这道题，3-6不够减，向十位借10，再减6得4，4再加个位剩下得3得7，好了，到十位了，十位本身不够用，还被个位借走1位，得，只能向百位借，10减7加4得7，百位被借走只剩1，1-1&#x3D;0，故差为77">
+<meta property="og:type" content="article">
+<meta property="og:title" content="走马观花《Code》第13章-如何实现减法">
+<meta property="og:url" content="http://example.com/2022/08/07/Code-chapter13/index.html">
+<meta property="og:site_name" content="下水道灵魂画手">
+<meta property="og:description" content="继电器可以连接起来构成二进制加法器，那么减法器怎么实现？其实加法和减法在某些方面是相互补充的，但两者计算机制不同，加法用到进位这种机制，从最右边一列向左进位；减法不用进位而是借位。 比如,253-176这道题，3-6不够减，向十位借10，再减6得4，4再加个位剩下得3得7，好了，到十位了，十位本身不够用，还被个位借走1位，得，只能向百位借，10减7加4得7，百位被借走只剩1，1-1&#x3D;0，故差为77">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/DustinPoirier20.jpg">
+<meta property="article:published_time" content="2022-08-07T08:23:22.000Z">
+<meta property="article:modified_time" content="2022-08-10T06:45:52.483Z">
+<meta property="article:author" content="DifferentLee">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/DustinPoirier20.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/08/07/Code-chapter13/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '走马观花《Code》第13章-如何实现减法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-08-10 14:45:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="下水道灵魂画手" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/WangYouSheng.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 小牛马的主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 小牛马的档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 小牛马的标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 小牛马的分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/./img/DustinPoirier20.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">下水道灵魂画手</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 小牛马的主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 小牛马的档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 小牛马的标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 小牛马的分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">走马观花《Code》第13章-如何实现减法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-07T08:23:22.000Z" title="发表于 2022-08-07 16:23:22">2022-08-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-10T06:45:52.483Z" title="更新于 2022-08-10 14:45:52">2022-08-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="走马观花《Code》第13章-如何实现减法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>继电器可以连接起来构成二进制加法器，那么减法器怎么实现？其实加法和减法在某些方面是相互补充的，但两者计算机制不同，加法用到进位这种机制，从最右边一列向左进位；减法不用进位而是借位。</p>
+<p>比如,253-176这道题，3-6不够减，向十位借10，再减6得4，4再加个位剩下得3得7，好了，到十位了，十位本身不够用，还被个位借走1位，得，只能向百位借，10减7加4得7，百位被借走只剩1，1-1=0，故差为77。</p>
+<p>如何用逻辑门实现这种逻辑呢？</p>
+<p>答：我们不会用这种借位逻辑，取而代之得是一个小技巧。还是那道题，要想不借位，首先将减数176用999减去，即999-176=823，一位都不用借，注意，这里因为操作数是3位，所以用999，操作数是4位我们则用9999，以此类推。把一个数从一串9999……中减去得到的结果我们称之为9的<strong>补码</strong>。176的9的补码就是823，反之823的9的补码是176，这样做的好处就是，无论减数是几，计算其9的补码时永远不会借位。</p>
+<p>在计算出减数的9的补码后，将补码加到原来的被减数上，即823+253=1076，最后再加1并减去1000得77，看，是不是没用到借位！</p>
+<p>原理很简单，253-176=153-176+1000-1000=253-176+999+1-1000=(999-176)+253+1-1000，这样用2个减法和2个加法代替原来的1个减法，其中2个减法，计算减数9的补码和减1000，永远不需要借位，不信你随便找个比1000大的数减1000试试需不需要借位。这样可以省去借位。</p>
+<p>那么问题来了，被减数比减数小怎么办？我们如果还用上面的方法，最后得到923-1000，遇到这种情况，小学的我们此时都是减数和被减数换个位子，得到的正数差取反即可，所以我们聪明地让1000-923企图取反，但是傻眼了，这样做还是不能绕过借位，我们用上面的方法，又是用999减，又是+1又是减1000的，不就是想不借位吗，本来被减数&gt;减数时，这种方法是可以绕过借位的，但被减数&lt;减数该方法就不灵了，即使我们耍小聪明让被减数和减数互换位置的情况下。</p>
+<p>这种情况要绕过借位与前文略有不同，仍然是先求出减数253的9的补码为746，再746+176=922，好，从下面开始和前文不同，既然前面加了999，我们再减999，只不过反过来，999-922，这样不用借位，999-922=77，此时我们再取反得-77，整个过程就是，176-253=176-253+999-999=999-253+176-999=922-999(互换位置再取反)=-77，看，我们又绕过了借位。</p>
+<p>这种绕借位的方法可以用在二进制数减法，而且比十进制数简单。</p>
+<p>253二进制数是11111101，176二进制数是10110000，我们还用上面教的方法，11111101-10110000=(11111101-10110000)+(100000000-100000000)=11111111-10110000+11111101+00000001-100000000=101001101-100000000=01001101，01001101转十进制便是77，整个过程中没有借位。</p>
+<p>得到一个十进制数的9的补码，我们是用一串9去减该数，对于一个二进制数，我们是用一串1去减，称为该数的1的补码，但请注意，求1的不码不仅不需要借位，减法也不用做，因为在求1的补码过程中，无非是将那个二进制数的0变为1，1变为0，所以二进制数的1的补码，也叫它的<strong>反码</strong>，计算机中有专门的反向器来做这个事。</p>
+<p>相同地，再解决 10110000-11111101 的问题，与十进制情况类似，先求11111101的1的补码(反码)即00000010，再加被减数得10110010，再减11111111，如果我们加00000001再减100000000，则会用到借位。同样，先让11111111和10110000互换位置，即11111111-10110010=01001101，再取反为-01001101，完美避过借位。整个过程是，10110000-11111101+11111111-11111111=(11111111-11111101)+10110000-11111111。</p>
+<p>现在我们弄清了怎么绕开借位实现减法，那么计算机内部怎么表示负数呢？</p>
+<p>从小就学，负数前面添一个负号，这个数就是负数，因此很容易想到，0和1可以分别代表正负号，比如8位二进制数，最高位定为符号位，可规定0正1负，余下数字定为数字位，这样也能表达有符号数。但是有个更好的方法，不仅能表示负数，还很适合计算正负数之间的加法，但该方法有个不足之处即，需要提前决定数字需要多少位。</p>
+<p>我们小学学的正负号表示正负数的方法，可以表示所有的正负数，我们把0想象成向一个方向延伸的无穷的正数流和向相反方向延伸的负数流的中点，如果我们不需要无限的正数和负数，可以清楚的确定我们能用到的数的范围，那么我们或许不需要规定正负号来表达正负数。</p>
+<p>比如银行给我们一个账号，账户存款上限是$499，可以透支$500，意味着账户上的数字在[-500.499]区间内，-500<sub>(-1)和0</sub>499共1000个整数，我们只需3位十进制000<sub>999就可以表达完全，且不用多余的位来表达正负号，我们用000</sub>499表示0<sub>499，然后500</sub>999不会在账户中出现闲着也是闲着，恰好拿来表示-500<sub>(-1)，500表示-500，501表示-499，502表示-498…………998表示-2、，999表示-1。换句话说，以5、6、7、8、9开头的三位数实际上都表示负数。注意这样形成了一个环形排序，想象两个圆圈，一个在内环，一个在外环，内环是0</sub>999顺时针排成一个环，外环先是0<sub>499顺时针排成一个半圆环，内外环的0</sub>499依次对应，从内环的500开始，外环开始变成负数，内环500对应外环-500，内环501对应外环-499，内环502对应外环-498，还是顺时针依次对应，直到内环998对应外环-2，内环999对应外环-1，最后内环回到0，外环也回到0。从外环看，最小的负数-500看上去好似外环最大正数499的延续；从内环看，数字999代表比0小的第一个负数。</p>
+<p>说到这，我们绕开了借位做减法，也摒弃了用了多年的正负号来表示有符号数，还辛辛苦苦弄了两个圈表示一定范围的正负数，有什么用呢？</p>
+<p>如果给999加1，通常得到1000，但由于我们已经限制了3位十进制数，所以实际上得到000。这种处理称为10的补码，要把三位负数转换成10的补码，需要用999减它的绝对值再加1，换句话说就是求9的补码再加1.比如-255，其10的补码就是999-255+1=745，745+255=1000，某三位负数10的补码就是1000减去它的绝对值得到的数。</p>
+<p>了解过负数的的补码，再回头看那两个圆环，有没有发现什么？对于我们苦心孤诣构造的两个圆环，前半部分都是非负数，内外环的数字都一样；对于后半圈，内环是外环数字的10的补码。在外圈我们想求-3+1=-2，我们用内圈-3的10的补码997，去加内圈正数区的1，得到结果998，再去对应外圈得-2，是不是很神奇！这也是我们规定500对应-500，501对应-499……的用意。</p>
+<p>假设我现在账户上有 $143，并花出去了 $78，还剩多少？即求143-78=143+(-78)，-78的10的补码是922，故我们可以这样求143-78，143+922=1065，忽略上溢，即结果是065。如果我们提前知道-78的10的补码是922，是不是就没有用到减法！</p>
+<p>之前我们求十进制数的9的补码是用一串9……去减那个数，求十进制数的10的补码是用其9的补码加1得到，那么在二进制中也可以这么干。求二进制数1的补码是用一串1……去减那个数，得到该数的1的补码也称该数的反码，计算机内部有专门的反相器来求二进制数的反码。求该数的2的补码，就用该数的反码(该数1的补码)加1就可得到。</p>
+<p>比如求十进制负数-237的10的补码，可以先求其9的补码999-237=762，再加1=763，即求得，也可以直接用1000-237=763，这样也能得到-273的10的补码，但是在求1000-237时需要用到借位。同理，我们求3的二进制数的1的补码(00000011的反码)，用11111111减它得到11111100，再加1得到11111101，11111101+00000011=100000000，由于只于一个字节所以把第9位1扔了，因此求00000011的2的补码也可以直接用100000000-00000011，但这样求会用到借位而且会用到减法。而先求00000011的反码，计算机做这一步有反向器所以不用11111111去做减法，再加1得2得补码，全程不用做减法。-3的二进制数在计算机内部只能用11111101来表示，其它二进制数没法表示-3，所谓的最高位是0正1负，不是把000000011最高位变成1，(注意：10000011在计算机内部表示-125而不是-3)，而是指00000011的2的补码算出来，为11111101，其最高位天然就是1。补码不能用常规的二进制转十进制方法计算它对应的十进制数，而是人为规定这个补码对应哪个十进制数。</p>
+<p>只需求正数对应的二进制数的2的补码，就可得到<strong>该正数的相反数</strong>在计算机内部对应的二进制数；只需求负数对应的二进制数的2的补码，就可得到<strong>该负数的相反数</strong>在计算机内部对应的二进制数。比如我们想知道-3在计算机内部用什么二进制数表示，先用3转换为二进制数00000011，再求00000011的2的补码为11111101，这个11111101就是-3在计算机内部对应的二进制数。同理，求11111101的2的补码，先对11111101求反码得00000010，再加1得到00000011，就是3在计算机内部对应的二进制数。</p>
+<p>好了，对于二进制，我们还能比着十进制的葫芦画2个圈。</p>
+<p>我们在十进制中，用0-999这1000个数，成功对应了-500-499，并通过巧妙的对应方法和溢出，使得做减法时只需要加法就能得到。同理，我们用00000000-11111111这256个数对应-128-127，最内圈00000000-11111111顺时针排成最内圈，00000000-01111111在内环的前半圈，分别对应外圈的0-127，内圈后半圈是10000000-11111111，分别对应外环的(-128)-(-1)，其中10000000对应-128，10000001对应-127，10000010对应-126……11111110对应-2，11111111对应-1，仔细观察，我们发现在这种对应规则下，正数对应地二进制数最高位都是0，负数对应二进制数最高位都是1，但计算机其实不会特意注意这个最高位，它只会把它当作普通的二进制数。其实内环后半圈我们如果用正常的二进制转十进制的方法算，比如10000010，算出来的结果是130，表示无符号数时这么对应是对的，但我们这不是想让减法变成加法算嘛，所以我们用这种人为对应的方法强行让10000010对应-126，看看有什么好处。我们计算2-126，在计算机内部就是2+(-126)，2按照那两个圈的对应规则对应二进制数00000010，-126对应10000010，2+(-126)在计算机内部就是做00000010+10000010=10000100，然后根据对应规则，10000100对应-124，在计算机内部成功地用加法实现了减法</p>
+<p>需要特别注意的是，计算机在做负数有关计算时，并不会跑过去特地判断最高位是0还是1，对于计算机来说这就是个2个普通的二进制数，计算机只需把他们加起来，多的位溢出即完成任务，只是，这普通的加法在我们对二进制人为设置的对应关系下，并结合溢出的特性，变成了减法。</p>
+<p>特别需要注意上溢和下溢，即结果在[-128，127]区间之外的情况，例如，125+125，计算机内部就是01111101+01111101=11111010，根据我们规定的对应关系，11111010代表-6；再看10000011+10000011，即-125-125，得到100000110，由于限制了8位，所以最高位的1被计算机扔掉为00000110，该数表示6。一般而言，若两个操作数同号，而结果的符号与2个操作数符号不同，则这样的加法八成产生了溢出，我们一般认为这样的加法是无效的。</p>
+<p>到此为止，二进制有两种使用方法，二进制数可以用来表示有符号数和无符号数，同是8位二进制数，可以表示无符号数的范围是0-255，可以表示有符号数的范围是(-128)-127，但这些二进制数本身不会告诉你它此刻表示的是有符号数还是无符号数。假设有人问你，10110110对应的十进制数是几，你一定不要先急着回答，问清楚是表示有符号数还是无符号数，它可能是182 or -74，-74怎么得到的？，求101101102的的补码，表示正数74，取相反数-74即得到。在C语言中，针对计算机内存里同一个二进制数，我们怎么控制让它输出是有符号数还是无符号数呢，用%d和%u控制。</p>
+<p>看，这就是二进制数的麻烦之处，它仅仅是纯粹的0和1，但没有告诉你什么含义。</p>
+<p>最后，我们回头看，最开始我们说减法要绕开借位做什么，用补码来做加法实现减法的效果和绕开借位有什么关系？因为我们想借绕开借位实现减法引入补码和反码。对于十进制来说，使用补码可以绕开借位实现减法，对于二进制来说，使用反码和补码不仅可以绕开二进制，还可以做加法实现减法的效果。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">DifferentLee</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/08/07/Code-chapter13/">http://example.com/2022/08/07/Code-chapter13/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">下水道灵魂画手</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/./img/DustinPoirier20.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/21/Java-learning/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier9.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">韩总Java修仙</div></div></a></div><div class="next-post pull-right"><a href="/2022/08/02/H-brother/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier15.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">专升本H哥我的好哥哥</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/WangYouSheng.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">DifferentLee</div><div class="author-info__description">一次编译，到处运行</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/DifferentLee" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:liyiraner@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.facebook.com/profile.php?id=100083266883262" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a><a class="social-icon" href="https://www.instagram.com/accounts/login/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram-square"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/09/24/Web_PHP_Learn/" title="Web程序设计"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Web程序设计"/></a><div class="content"><a class="title" href="/2022/09/24/Web_PHP_Learn/" title="Web程序设计">Web程序设计</a><time datetime="2022-09-24T07:42:10.000Z" title="发表于 2022-09-24 15:42:10">2022-09-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/19/C_Print_icon/" title="C语言控制台打印图标小技巧"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言控制台打印图标小技巧"/></a><div class="content"><a class="title" href="/2022/09/19/C_Print_icon/" title="C语言控制台打印图标小技巧">C语言控制台打印图标小技巧</a><time datetime="2022-09-18T16:00:00.000Z" title="发表于 2022-09-19 00:00:00">2022-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/05/CLion-Single-File-Execution/" title="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题"/></a><div class="content"><a class="title" href="/2022/09/05/CLion-Single-File-Execution/" title="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题">解决CLion中建立多个c/cpp文件(多个main函数共存)的问题</a><time datetime="2022-09-05T07:08:12.000Z" title="发表于 2022-09-05 15:08:12">2022-09-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/30/FunctionLogin-1/" title="小作业1-登录功能(控制台)"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="小作业1-登录功能(控制台)"/></a><div class="content"><a class="title" href="/2022/08/30/FunctionLogin-1/" title="小作业1-登录功能(控制台)">小作业1-登录功能(控制台)</a><time datetime="2022-08-30T10:30:31.000Z" title="发表于 2022-08-30 18:30:31">2022-08-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/21/Java-learning/" title="韩总Java修仙"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="韩总Java修仙"/></a><div class="content"><a class="title" href="/2022/08/21/Java-learning/" title="韩总Java修仙">韩总Java修仙</a><time datetime="2022-08-21T08:23:00.000Z" title="发表于 2022-08-21 16:23:00">2022-08-21</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/./img/DustinPoirier20.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By DifferentLee</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">见到您，我高兴坏了😍</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script id="canvas_nest" defer="defer" color="255,255,0" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="咱,俩,谁,是,小,牛,马" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>

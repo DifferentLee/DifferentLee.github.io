@@ -1,0 +1,330 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>C语言学习tips | 下水道灵魂画手</title><meta name="author" content="DifferentLee"><meta name="copyright" content="DifferentLee"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="2022.9.21   输入长度不小于20的字符串，则定义数组是一定要不小于21，因为有’\0’；   字符型比较相等时一定要用 &#x3D;&#x3D; ，千万别用 &#x3D; 。   冒泡排序，可以只排你想让排序的行数，余下行数可以不排，比如有一个长度为10的一维数组，则我们可以用冒泡排序只去排前2行，前3行，前4行等等。   逗号运算符优先级是C语言所有运算符里面最低的。   1,200 不是一个合法常量；   C语">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言学习tips">
+<meta property="og:url" content="http://example.com/2022/07/22/C_Learn_Tips/index.html">
+<meta property="og:site_name" content="下水道灵魂画手">
+<meta property="og:description" content="2022.9.21   输入长度不小于20的字符串，则定义数组是一定要不小于21，因为有’\0’；   字符型比较相等时一定要用 &#x3D;&#x3D; ，千万别用 &#x3D; 。   冒泡排序，可以只排你想让排序的行数，余下行数可以不排，比如有一个长度为10的一维数组，则我们可以用冒泡排序只去排前2行，前3行，前4行等等。   逗号运算符优先级是C语言所有运算符里面最低的。   1,200 不是一个合法常量；   C语">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/TaylorSwift3.jpg">
+<meta property="article:published_time" content="2022-07-22T07:42:10.000Z">
+<meta property="article:modified_time" content="2022-10-31T03:43:23.990Z">
+<meta property="article:author" content="DifferentLee">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/TaylorSwift3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/07/22/C_Learn_Tips/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C语言学习tips',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-31 11:43:23'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="下水道灵魂画手" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/WangYouSheng.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 小牛马的主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 小牛马的档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 小牛马的标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 小牛马的分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/./img/TaylorSwift3.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">下水道灵魂画手</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 小牛马的主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 小牛马的档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 小牛马的标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 小牛马的分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C语言学习tips</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-22T07:42:10.000Z" title="发表于 2022-07-22 15:42:10">2022-07-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-31T03:43:23.990Z" title="更新于 2022-10-31 11:43:23">2022-10-31</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C语言学习tips"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="2022921"><a class="markdownIt-Anchor" href="#2022921"></a> 2022.9.21</h2>
+<ul>
+<li>
+<p>输入长度不小于20的字符串，则定义数组是一定要不小于21，因为有’\0’；</p>
+</li>
+<li>
+<p>字符型比较相等时一定要用 == ，千万别用 = 。</p>
+</li>
+<li>
+<p>冒泡排序，可以只排你想让排序的行数，余下行数可以不排，比如有一个长度为10的一维数组，则我们可以用冒泡排序只去排前2行，前3行，前4行等等。</p>
+</li>
+<li>
+<p>逗号运算符优先级是C语言所有运算符里面最低的。</p>
+</li>
+<li>
+<p>1,200 不是一个合法常量；</p>
+</li>
+<li>
+<p>C语言是由函数组成的，函数是C语言的基本单位。所以说C语言主要是借助定义函数来实现程序模块化，函数把程序分成一个个模块。</p>
+</li>
+<li>
+<p>注意，我们写for循环时，改变条件的语句，比如i++，一般就写在for的括号里面，但是在写while循环时，while 的括号里面没有i++，循环体里面需要加能改变条件的语句，否则是死循环。</p>
+</li>
+<li>
+<p>C语言中goto语句，不仅可以终止循环，还能跳过你不想执行的语句。</p>
+</li>
+<li>
+<p>程序从main()函数开始执行，也从main()函数结束。</p>
+</li>
+<li>
+<p>直接递归:递归函数的函数体中存在显式的自我调用时，被称为直接递归。例如，函数foo中包含自我调用，因此是直接递归。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">foo</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">if</span> (x &lt;= <span class="number">0</span>) <span class="keyword">return</span> x;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">return</span> foo(x - <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>间接递归:函数foo被称为间接递归，如果它包含对另一个函数的调用，而另一个函数最终会调用回函数foo。</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="type">int</span> <span class="title function_">foo</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (x &lt;= <span class="number">0</span>) <span class="keyword">return</span> x;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> bar(x);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="type">int</span> <span class="title function_">bar</span><span class="params">(<span class="type">int</span> y)</span> &#123;</span><br><span class="line"> <span class="keyword">return</span> foo(y - <span class="number">1</span>);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>c语言中小的数对大的数取余，就商0，余数就等于被除数。3%7=3，7%10=7，10%20=10。</p>
+</li>
+<li>
+<p>运算符：又叫<strong>操作符</strong>，表示对数据操作的符号，操作的数称为<strong>操作数</strong>，也称<strong>算子</strong>；</p>
+</li>
+<li>
+<p>格式化字符串（Format String）是在编程过程中，允许编码人员通过特殊的占位符，将相关对应的信息整合或提取的规则字符串。格式化字符串包括格式化输入和格式化输出。一般格式：%[标志][输出最小宽度][.精度][长度][格式字符]</p>
+</li>
+<li>
+<p>当 switch-case 的判断条件是一串<strong>连续的正整数</strong>时，其实是不用写冗长的switch语句的，写成数组简短很多，比如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (residue) &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">          outcome = <span class="number">1</span>;</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">          outcome = <span class="number">0</span>;</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">          outcome = <span class="number">88</span>;</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">          outcome = <span class="number">9</span>;</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">          outcome = <span class="number">8</span>;</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">          outcome = <span class="number">7</span>;</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">          outcome = <span class="number">6</span>;</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">          outcome = <span class="number">5</span>;</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">          outcome = <span class="number">4</span>;</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">          outcome = <span class="number">3</span>;</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">          outcome = <span class="number">2</span>;</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>我们把outcome写成一个数组，case的值用数组下标好了。</p>
+</li>
+<li>
+<p>C语言中如何输出指定长度的整数，不够的用0填充。&quot;%0ad&quot;中的a是几就代表输出固定长度为几的整数，0代表的就是不够的位数用0填充，一般为向左填充不够的位数。比如这个%04d的0就是指在前面补0占位，4代表位宽。一般这两个要一起用。当然，当数字本身宽度比位宽大的话，那这就不起作用了，如a=12345;那么输出也是 a=12345</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;a=%04d\n&quot;</span>, a);</span><br></pre></td></tr></table></figure>
+<p>输出：a=0001<br />
+但是不能补其他符号，比如：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%*4d\n&quot;</span>, a);</span><br></pre></td></tr></table></figure>
+<p>我想用 * 号来补前面的空位，这样是行不通的，语法过不去。<br />
+如果不加0，只有%4d，则不够的只会补空格，比如：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%4d\n&quot;</span>, a);</span><br></pre></td></tr></table></figure>
+<p>输出：   1，4前面加符号，则左对齐，比如：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%-4d##\n&quot;</span>, a);</span><br></pre></td></tr></table></figure>
+<p>输出：1   ##，但是超出范围，左对齐也不起作用了，比如</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="number">100000</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%-4d##\n&quot;</span>, a);</span><br></pre></td></tr></table></figure>
+<p>输出100000##</p>
+</li>
+<li>
+<p>printf如果仅仅输出一个字符串，则可以<strong>省略</strong>转化字符 %s。比如：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,<span class="string">&quot;Hello World!&quot;</span>);</span><br><span class="line">可简写为：</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello World!&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>但如果输出与其他数据组合的字符串时，必须用转化字符 %s</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s 一斤 %f 元，%s 一斤 %d 元&quot;</span>,<span class="string">&quot;苹果&quot;</span>,<span class="number">2.5</span>,<span class="string">&quot;西瓜&quot;</span>，<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>puts()是用来输出字符串的，可以直接输出字符串常/变量，也可以输出指针变量<br />
+printf（）的输出格式很多，可以根据不同的需要加转义字符，达到格式化输出。<br />
+区别: puts()和printf()都能够用来输出字符串，但是两者有些许不同。puts()在输出字符串后，会自动换行，而printf不会自动换行。<br />
+puts(s)等价于printf(“%s\n”,s);</p>
+</li>
+<li>
+<p>0 &lt; 余数 &lt; 商</p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43886797/article/details/85569998?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-85569998-blog-80423961.pc_relevant_multi_platform_whitelistv4&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-85569998-blog-80423961.pc_relevant_multi_platform_whitelistv4&amp;utm_relevant_index=1">辗转相除法求最大公因数原理1</a></p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/haohao__/article/details/106229223?spm=1001.2101.3001.6650.5&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-5-106229223-blog-114681895.t0_edu_mlt&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-5-106229223-blog-114681895.t0_edu_mlt&amp;utm_relevant_index=6">辗转相除法求最大公因数原理2</a></p>
+<p>由于 m ÷ n = q…r 这个关系式子的存在，我们很容易得到 m 和 n 的公约数集合就等于 n 和 r 的公约数集合。所以 m 和 n 的最大公因数一定也是 n 和<br />
+r 的最大公因数，所以我们就可以用递归去求了。求 m 和 n 的最大公因数也就是求 n 和 r 的最大公因数，以此类推，可以开始递归了，直至找到那个最大公约数。</p>
+<ul>
+<li>指针的变量命名别和普通变量名一样，否则会报错。</li>
+<li>if 和 else if 语句后的判断条件从上到下依次判定，遇到第一个满足条件的则进入执行语句执行 执行完毕后无视其他 else if 和 else 语句判断和其执行语句，往下执行。如果最后一个判断条件才满足，则前面的判断条件肯定都判断过了。</li>
+<li>字符数组，在scanf gets时自动加\0，在用双引号初始化时也自动加\0</li>
+<li>函数名是指向函数的指针,代表函数的起始地址.</li>
+<li>puts()函数只能输出字符串</li>
+<li>如果想从一个字符串的第n个位置往后输出,则可以这样, 比如:<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> *a = <span class="string">&quot;China&quot;</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, a + n);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>对于指针来说，p + 1 比 p++ 好，因为 前者不会改变p的值，后面如果要再用到p，还是原值，不容易出错误。</li>
+<li>缓冲区（Buffer）又称为缓存（Cache），是内存空间的一部分。</li>
+<li>使用 gets() 时，系统会将最后“敲”的换行符从缓冲区中取出来，然后丢弃，所以缓冲区中不会遗留换行符。这就意味着，如果前面使用过 gets()，而后面又要从键盘给字符变量赋值的话就不需要吸收回车清空缓冲区了，因为缓冲区的回车已经被 gets() 取出来扔掉了。</li>
+<li>关于指针作为函数返回值的一些思考：<br />
+先看下面一段代码引出问题：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> * <span class="title function_">function</span><span class="params">()</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> *b = <span class="number">0</span>;</span><br><span class="line">    b = function();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; ++i) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, b[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> * <span class="title function_">function</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> a[<span class="number">2</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>&#125;;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们运行输出，发现什么都没有输出，调试一下，发现 b 是NULL，哦，我们恍然大悟，a是一个指向一个int数组的指针，该数组名就是a，但是这个数组是一个本地变量，作用域和生存期都是在函数内部。返回的是一个指向这个本地变量的指针，那么到了main()以后，返回的这个指针还在，并且赋给了b，我们想让b指向a数组，但是a数组已经不在了，所以b指向空。所以我们如果想让数组返回一个指向数组的指针，那么该数组最好定义在main()函数里面，并且传入函数内部。</p>
+<p>如果函数返回的是普通类型，比如返回int型，看下面这个代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span>  <span class="title function_">function</span><span class="params">()</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> b = <span class="number">0</span>;</span><br><span class="line">    b = function();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span>  <span class="title function_">function</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行输出是2，返回int型就不会出现这种问题，因为 a 确实会被消灭，但是 a 把值及时传给了 b ，上面那个返回指针的直接返回NULL，b 的值就是NULL</p>
+<p>再看一组例子:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> *<span class="title function_">func</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> n = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">return</span> &amp;n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> *p = func(), n;</span><br><span class="line">    n = *p;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;value = %d\n&quot;</span>, n);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行后也是什么也不输出。返回的是NULL。</p>
+<ul>
+<li>2个挨在一起的scanf()，第2个scnaf往往会去读输入第一个scanf留下了的换行符，用两个连续的gets()函数可以解决这个问题。</li>
+<li>C语言字符型数组初始化，不够的自动补’\0’</li>
+<li>我们想连着用scanf()读入字符串，可以这么写：  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> a[<span class="number">20</span>] = &#123;<span class="string">&#x27;\0&#x27;</span>&#125;;</span><br><span class="line"><span class="type">char</span> b[<span class="number">20</span>] = &#123;<span class="string">&#x27;\0&#x27;</span>&#125;;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%s %s&quot;</span>, &amp;a, &amp;b);</span><br></pre></td></tr></table></figure>
+原因是scanf()中%s读到空格就不往下读了。刚好可以利用这个空格来分割输入的字符。</li>
+<li>想让两个变量交换值，可以用 异或 位运算符(两个值相异结果为真，两个值相同结果为假)，比如：  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span>;         <span class="comment">// 1010</span></span><br><span class="line">b = <span class="number">11</span>;         <span class="comment">// 1011</span></span><br><span class="line">a = a ^ b;      <span class="comment">// 0001</span></span><br><span class="line">b = b ^ a;      <span class="comment">// 1010</span></span><br><span class="line">a = a ^ b;      <span class="comment">// 1011</span></span><br></pre></td></tr></table></figure>
+输出 a = 11; b = 10;<br />
+这样做比用临时变量来保存的a的值，可以节省一个用来保存临时变量的寄存器。</li>
+<li>左移1位，相当于该数乘2，左移比乘法运算快得多，有些编译器会把 * 2自动转为左移1位；</li>
+</ul>
+<ol>
+<li>文本文件：这类文件以文本的ASCII码形式存储在计算机中。它是以&quot;行&quot;为基本结构的一种信息组织和存储方式。</li>
+<li>二进制文件：这类文件以文本的二进制形式存储在计算机中，用户一般不能直接读懂它们，只有通过相应的软件才能将其显示出来。二进制文件一般是可执行程序、图形、图像、声音等等。</li>
+</ol>
+<p>然而，可能与你的想象不同的是，这里的二进制或者文本与文件的格式并没有任何关系，而是文件流操作时对数据的表达方式。因为文本文件与二进制文件的区别仅仅是编码上不同.</p>
+<p>大家都知道计算机的存储在物理上是二进制的，所以文本文件与二进制文件的区别并不是物理上的，而是逻辑上的。这两者只是在编码层次上有差异。简单来说，文本文件是基于字符编码的文件，常见的编码有ASCII编码，UNICODE编码等等。二进制文件是基于值编码的文件，你可以根据具体应用，指定某个值是什么意思(这样一个过程，可以看作是自定义编码)。</p>
+<p>从上面可以看出文本文件基本上是定长编码的(也有非定长的编码如UTF-8)。而二进制文件可看成是变长编码的，因为是值编码嘛，多少个比特代表一个值，完全由你决定。大家可能对BMP文件比较熟悉，就拿它举例子吧，其头部是较为固定长度的文件头信息，前2字节用来记录文件为BMP格式，接下来的8个字节用来记录文件长度，再接下来的4字节用来记录bmp文件头的长度。</p>
+<p>文本工具打开一个文件的过程是怎样的呢？拿记事本来说，它首先读取文件物理上所对应的二进制比特流，然后按照你所选择的解码方式来解释这个流，然后将解释结果显示出来。一般来说，你选取的解码方式会是ASCII码形式（ASCII码的一个字符是８个比特），接下来，它8个比特8个比特地来解释这个文件流。例如对于这么一个文件流&quot;01000000_01000001_01000010_01000011&quot;(下划线’’_’’，为了增强可读性手动添加的)，第一个8比特’‘01000000’‘按ASCII码来解码的话，所对应的字符是字符’‘A’’，同理其它3个8比特可分别解码为’‘BCD’’，即这个文件流可解释成“ABCD”，然后记事本就将这个“ABCD”显示在屏幕上。</p>
+<p>事实上，世界上任何东西要与其他东西通信会话，都存在一个既定的协议，既定的编码。人与人之间通过文字联络，汉字“妈”代表生你的那个人，这就是一种既定的编码。但注意到这样一种情况，汉字“妈”在日本文字里有可能是你生下的那个人，所以当一个中国人Ａ与日本Ｂ之间用“妈”这个字进行交流，出现误解就很正常的。用记事本打开二进制文件与上面的情况类似。记事本无论打开什么文件都按既定的字符编码工作（如ASCII码），所以当他打开二进制文件时，出现乱码也是很必然的一件事情了，解码和译码不对应嘛。例如文件流’‘00000000_00000000_00000000_00000001’'可能在二进制文件中对应的是一个四字节的整数int 1，在记事本里解释就变成了&quot;NULL_NULL_NULL_SOH&quot;这四个控制符。</p>
+<p>因为文本文件与二进制文件的区别仅仅是编码上不同，所以他们的优缺点就是编码的优缺点，这个找本编码的书来看看就比较清楚了。一般认为，文本文件编码基于字符定长，译码容易些；二进制文件编码是变长的，所以它灵活，存储利用率要高些，译码难一些（不同的二进制文件格式，有不同的译码方式）。关于空间利用率，想想看，二进制文件甚至可以用一个比特来代表一个意思(位操作)，而文本文件任何一个意思至少是一个字符．</p>
+<p>在windows下,文本文件不一定是一ASCII来存贮的,因为ASCII码只能表示128的标识,你打开一个txt文档,然后另存为,有个选项是编码,可以选择存贮格式,一般来说UTF-8编码格式兼容性要好一些.而二进制用的计算机原始语言,不存贮兼容性.    很多书上还认为，文本文件的可读性要好些，存储要花费转换时间(读写要编译码)，而二进制文件可读性差，存储不存在转换时间（读写不要编解码，直接写值）．这里的可读性是从软件使用者角度来说的，因为我们用通用的记事本工具就几乎可以浏览所有文本文件，所以说文本文件可读性好；而读写一个具体的二进制文件需要一个具体的文件解码器，所以说二进制文件可读性差，比如读BMP文件，必须用读图软件。<br />
+<a target="_blank" rel="noopener" href="https://www.cnblogs.com/pengwangguoyh/articles/3223072.html">详见</a></p>
+<ul>
+<li>注意在写递归函数时，特别要谨慎使用全局变量或者静态局部部便变量，因为在进入下一层函数时，你不好把控这个全局变量或者静态局部变量的值，看下面两段代码：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> <span class="title function_">f</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> n)</span>&#123;</span><br><span class="line">    <span class="type">double</span> this_item = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> n2 = n - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) &#123;</span><br><span class="line">        this_item = a;</span><br><span class="line">        <span class="keyword">return</span>  this_item;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (n2 &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            this_item += (a * <span class="built_in">pow</span>(<span class="number">10</span>, n2--));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>  this_item + f(a, n - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>和</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> this_item = <span class="number">0</span>;</span><br><span class="line"><span class="type">double</span> <span class="title function_">f</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> n)</span>&#123;</span><br><span class="line">    <span class="type">int</span> n2 = n - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) &#123;</span><br><span class="line">        this_item = a;</span><br><span class="line">        <span class="keyword">return</span>  this_item;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (n2 &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            this_item += (a * <span class="built_in">pow</span>(<span class="number">10</span>, n2--));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>  this_item + f(a, n - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第2段代码，每进入下一次函数，this_item的值积累了外层函数得到的值，所以每一层函数得到的this_item会被重复加。</p>
+<ul>
+<li>
+<p>回调函数就是一个通过函数指针调用的函数。如果你把函数的指针（地址）作为参数传递给另一个函数，当这个指针被用来调用其所指向的函数时，我们就说这是回调函数。把一段可执行的代码像参数传递那样传给其他代码，而这段代码会在某个时刻被调用执行，这就叫做回调。如果代码立即被执行就称为同步回调，如果在之后晚点的某个时间再执行，则称之为异步回调。为什么不像普通函数调用那样，在回调的地方直接写函数的名字呢？这样不也可以吗？为什么非得用回调函数呢？有这个想法很好，因为在网上看到解析回调函数的很多例子，其实完全可以用普通函数调用来实现的。要回答这个问题，我们先来了解一下回到函数的好处和作用，那就是<strong>解耦</strong>，对，就是这么简单的答案，就是因为这个特点，普通函数代替不了回调函数。所以，在我眼里，这才是回调函数最大的特点。(其实普通函数的函数名也是一个函数指针)</p>
+</li>
+<li>
+<p>关于判断素数的一个技巧：判断一个整数m是否是素数，只需把 m 被 2 ~ m-1 之间的每一个整数去除，如果都不能被整除，那么 m 就是一个素数。m 不必被 2 ~ m-1 之间的每一个整数去除，只需被 2 ~  sqrt(m)之间的每一个整数去除就可以了。如果 m 不能被 2 ~  sqrt(m)间任一整数整除，m 必定是素数。，但是sqrt(m)，如果是小数怎么办？是判断 2 ~ (int)(sqrt(m)) + 1 还是 2 ~ (int)(sqrt(m)) 就行了呢？后者。因为 (int)(sqrt(m)) + 1 比 (sqrt(m)) 大了，如果 m 能被 (int)(sqrt(m)) + 1 整除，那么m也一定能被一个小于(int)(sqrt(m))的整除，我们只需判断那个比(int)(sqrt(m))小的数即可，因此判断 2 ~ (int)(sqrt(m)) 就行了。</p>
+</li>
+<li>
+<p>编写一个程序，可以编一点，运行一下，看看有没有错误，如果全部写完再来运行，出错了不容易找出在哪个位置。</p>
+</li>
+<li>
+<p>for (i = 0; s[i] != ‘\0’; ++i) 这个for循环可以代替 int i = 0; while(s[i] != ‘\0’) {++i;}</p>
+</li>
+<li>
+<p>while 循环常用于不知道到底要循环多少次的循环，for 循环适合知道循环次数的循环，但也不绝对，比如： for (int i = 0; a[i] != 0; ++i) {}</p>
+</li>
+<li>
+<p>C++能完全兼容C</p>
+</li>
+<li>
+<p>编码规范不仅能让代码更易读，也可以提高代码的运行效率</p>
+</li>
+<li>
+<p>面向过程: 就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。典型的C语言，C语言是由函数组成的，函数是C语言的基本单位。所以说C语言主要是借助定义函数来实现程序模块化，函数把程序分成一个个模块，C语言程序执行的过程就是从主函数依次调用函数的过程；</p>
+</li>
+<li>
+<p>面向对象：是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描述某个事物在整个解决问题的步骤中的行为。解决问题并不是一步一步地写函数去完成的</p>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">DifferentLee</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/07/22/C_Learn_Tips/">http://example.com/2022/07/22/C_Learn_Tips/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">下水道灵魂画手</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/./img/TaylorSwift3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/24/Data-Structure-learning/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/Carol2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">陈姥姥_数据结构(1)</div></div></a></div><div class="next-post pull-right"><a href="/2022/07/22/Discrete_mathematics/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">贾老师的离散数学</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/WangYouSheng.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">DifferentLee</div><div class="author-info__description">一次编译，到处运行</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/DifferentLee" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:liyiraner@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.facebook.com/profile.php?id=100083266883262" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a><a class="social-icon" href="https://www.instagram.com/accounts/login/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram-square"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2022921"><span class="toc-number">1.</span> <span class="toc-text"> 2022.9.21</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/09/24/Web_PHP_Learn/" title="Web程序设计"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Web程序设计"/></a><div class="content"><a class="title" href="/2022/09/24/Web_PHP_Learn/" title="Web程序设计">Web程序设计</a><time datetime="2022-09-24T07:42:10.000Z" title="发表于 2022-09-24 15:42:10">2022-09-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/19/C_Print_icon/" title="C语言控制台打印图标小技巧"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言控制台打印图标小技巧"/></a><div class="content"><a class="title" href="/2022/09/19/C_Print_icon/" title="C语言控制台打印图标小技巧">C语言控制台打印图标小技巧</a><time datetime="2022-09-18T16:00:00.000Z" title="发表于 2022-09-19 00:00:00">2022-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/05/CLion-Single-File-Execution/" title="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题"/></a><div class="content"><a class="title" href="/2022/09/05/CLion-Single-File-Execution/" title="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题">解决CLion中建立多个c/cpp文件(多个main函数共存)的问题</a><time datetime="2022-09-05T07:08:12.000Z" title="发表于 2022-09-05 15:08:12">2022-09-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/30/FunctionLogin-1/" title="小作业1-登录功能(控制台)"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="小作业1-登录功能(控制台)"/></a><div class="content"><a class="title" href="/2022/08/30/FunctionLogin-1/" title="小作业1-登录功能(控制台)">小作业1-登录功能(控制台)</a><time datetime="2022-08-30T10:30:31.000Z" title="发表于 2022-08-30 18:30:31">2022-08-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/21/Java-learning/" title="韩总Java修仙"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="韩总Java修仙"/></a><div class="content"><a class="title" href="/2022/08/21/Java-learning/" title="韩总Java修仙">韩总Java修仙</a><time datetime="2022-08-21T08:23:00.000Z" title="发表于 2022-08-21 16:23:00">2022-08-21</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/./img/TaylorSwift3.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By DifferentLee</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">见到您，我高兴坏了😍</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script id="canvas_nest" defer="defer" color="255,255,0" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="咱,俩,谁,是,小,牛,马" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>

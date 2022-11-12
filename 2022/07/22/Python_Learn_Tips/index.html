@@ -1,0 +1,399 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>python学习技巧 | 下水道灵魂画手</title><meta name="author" content="DifferentLee"><meta name="copyright" content="DifferentLee"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Python字符串是不可变的。这意味着一旦创建了字符串，便无法对其进行修改，如果您进行了修改，则它将创建一个新的python字符串。 对于eval()括号中的的字符串(非数字)，如果字符串带的是单引号或者是双引号都会引起NameError,这是因为eval()函数在处理字符串时会去掉其两个引号。正确应该使用一个单引号包含一个双引号组成的三引号来包含字符串。 python 如果使用一个未被定义的变">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python学习技巧">
+<meta property="og:url" content="http://example.com/2022/07/22/Python_Learn_Tips/index.html">
+<meta property="og:site_name" content="下水道灵魂画手">
+<meta property="og:description" content="Python字符串是不可变的。这意味着一旦创建了字符串，便无法对其进行修改，如果您进行了修改，则它将创建一个新的python字符串。 对于eval()括号中的的字符串(非数字)，如果字符串带的是单引号或者是双引号都会引起NameError,这是因为eval()函数在处理字符串时会去掉其两个引号。正确应该使用一个单引号包含一个双引号组成的三引号来包含字符串。 python 如果使用一个未被定义的变">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/TaylorSwift3.jpg">
+<meta property="article:published_time" content="2022-07-22T07:42:10.000Z">
+<meta property="article:modified_time" content="2022-11-09T01:35:31.894Z">
+<meta property="article:author" content="DifferentLee">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/TaylorSwift3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/07/22/Python_Learn_Tips/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'python学习技巧',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-11-09 09:35:31'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="下水道灵魂画手" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/WangYouSheng.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 小牛马的主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 小牛马的档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 小牛马的标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 小牛马的分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/./img/TaylorSwift3.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">下水道灵魂画手</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 小牛马的主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 小牛马的档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 小牛马的标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 小牛马的分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">python学习技巧</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-22T07:42:10.000Z" title="发表于 2022-07-22 15:42:10">2022-07-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-09T01:35:31.894Z" title="更新于 2022-11-09 09:35:31">2022-11-09</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="python学习技巧"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><ul>
+<li>Python字符串是不可变的。这意味着一旦创建了字符串，便无法对其进行修改，如果您进行了修改，则它将创建一个新的python字符串。</li>
+<li>对于eval()括号中的的字符串(非数字)，如果字符串带的是单引号或者是双引号都会引起NameError,这是因为eval()函数在处理字符串时会去掉其两个引号。正确应该使用一个单引号包含一个双引号组成的三引号来包含字符串。</li>
+<li>python 如果使用一个未被定义的变量,解释器会报错.关键是括号中粉底的那三个词,用来解释python中怎么才叫定义一个变量,也就是说你想定义一个变量必须要给它赋值,只有给一个名称赋了值,才叫定义了一个变量.//有的语言中,可以使用某个关键字先声明一个变量,而赋值的操作可以后面做;还有的语言,你可以只声明变量而不赋值,后面使用该未赋值的变量时,解释器会根据你声明的类型赋一个默认值,等等;也就是说不同语言对变量的处理逻辑可能不同.而python对变量的处理逻辑就是:定义和赋值二者绑在一块了,即赋值的过程同时完成了&quot;定义+赋值&quot;,不存在&quot;只定义&quot;这个过程。python还是一个强类型语言，每个变量的类型必须在编译时确定，而只有赋值才能确定类型。</li>
+<li>Python的布尔类型有两个值True和False（注意大小写要区分）</li>
+<li>python 的方法一定要加括号</li>
+<li>字符串切片后返回字符串</li>
+<li>有个切片得小技巧，可以看到python切片功能的强大，在做古风排版时：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">str1 = <span class="built_in">input</span>()</span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(str1)%n != <span class="number">0</span>:</span><br><span class="line">    str1 = str1 + (n - (<span class="built_in">len</span>(str1)%n)) * <span class="string">&#x27; &#x27;</span><span class="comment">#用空格补齐字符串</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    <span class="built_in">print</span>(str1[i::n]) </span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">str1 = <span class="built_in">input</span>()</span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(str1)%n != <span class="number">0</span>:</span><br><span class="line">    str1 = str1 + (n - (<span class="built_in">len</span>(str1)%n)) * <span class="string">&#x27; &#x27;</span><span class="comment">#用空格补齐字符串</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    <span class="built_in">print</span>(str1[i::n][::-<span class="number">1</span>]) <span class="comment">#str1先和第一个括号结合切片返回一个切片后的字符串，再与第2个[]结合逆序输出</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>对于python的print(), 字符串和数值类型，可以直接输出; 对于变量，无论什么类型，数值、字符、列表、字典… 可以直接输出</li>
+<li>len()方法返回对象（字符、列表、元组等）长度或项目个数，不想C只能用于字符串</li>
+<li>python如何判断一个列表中的数值是否全部小于某个数：all(map(lambda x: x &lt; num, list1))</li>
+<li>想把字符数组转为数字型数组，可以用  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numbers = [‘<span class="number">1</span>’, ‘<span class="number">5</span>’, ‘<span class="number">10</span>’, ‘<span class="number">8</span>’] numbers = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, numbers))</span><br></pre></td></tr></table></figure>
+如果numbers是纯数字的字符串也能用这种方法转为纯数字的列表</li>
+<li>把num=123这个整数转为列表：可以print(list(str(num)))，但不能print(list(num))，因为num不可迭代，list必须用于可迭代对象</li>
+<li>字符串切片后返回字符串，列表切片后返回列表</li>
+<li>try except和if-else一样，都是分支结构，但是try-except更高阶，因为try-except给了我们试错的机会，如果try那个分支出现错误，不会立马报错，而是跳到except去执行下面的代码，但是if如果出现错误，会立马报错，并程序停止执行。多用try-except，就像我们的生活。</li>
+<li><a target="_blank" rel="noopener" href="http://xn--a-zn6a4ey7aw99aznkqrif6c0rb.py">如果您有一个文件a.py</a>，并且在其中有一些功能：  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">b</span>():</span><br><span class="line"><span class="comment"># Something</span></span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">c</span>():</span><br><span class="line"><span class="comment"># Something</span></span><br><span class="line"><span class="keyword">return</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+你想把它们导入到另一个.py文件里并调用其中的函数，你得写  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> a <span class="keyword">import</span> b, c</span><br></pre></td></tr></table></figure>
+</li>
+<li>python中 is, is not 对比的是两个变量的内存地址，==,!= 对比的是两个变量的值</li>
+<li>python 中没有 || ，和 &amp;&amp;，但是有 == 和 !=</li>
+<li>python isdigit()和isalpha()都是在判断字符串，而非真的数字和字母</li>
+<li>python eval(str(n)[::-1]) 整数逆序的方法，利用可迭代对象的切片</li>
+<li>字符串变列表可以用list()</li>
+<li>当for循环有两个需要迭代的对象时，要用zip对这多个变量封装，否则会报错。比如：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">starts = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">ends = [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line"><span class="keyword">for</span> start, end <span class="keyword">in</span> starts, ends:</span><br><span class="line">    <span class="built_in">print</span>((start, end))</span><br></pre></td></tr></table></figure>
+<p>这样会报错</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">starts = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">ends = [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line"><span class="keyword">for</span> start, end <span class="keyword">in</span> <span class="built_in">zip</span>(starts, ends):</span><br><span class="line">    <span class="built_in">print</span>((start, end))</span><br></pre></td></tr></table></figure>
+<p>这样才是对的</p>
+<ul>
+<li>
+<p>python 中 单个字符不能和整数直接运算，不像C语言</p>
+</li>
+<li>
+<p>注意， python 可以这样写 65 &lt;= ord(i) &lt;= 90 ，这是和C语言很不同的地方</p>
+</li>
+<li>
+<p>import 模块：导入一个模块；注：相当于导入的是一个文件夹，是个相对路径。</p>
+</li>
+<li>
+<p>from…import：导入了一个模块中的一个函数；注：相当于导入的是一个文件夹中的文件，是个绝对路径。</p>
+</li>
+<li>
+<p>from…import *：是把一个模块中所有函数都导入进来; 注：相当于导入的是一个文件夹中所有文件，所有函数都是绝对路径。</p>
+</li>
+<li>
+<p>from…import *语句与import区别在于：</p>
+<ol>
+<li>import 导入模块，每次使用模块中的函数都要是定是哪个模块。</li>
+<li>from…import * 导入模块，每次使用模块中的函数，直接使用函数就可以了；注因为已经知道该函数是那个模块中的了。</li>
+<li>一般来说，推荐使用 import 语句，避免使用 from … import，因为这样可以使你的程序更加易读，也可以避免名称冲突。</li>
+</ol>
+</li>
+<li>
+<p>python用来计算微积分的库主要用的是sympy库</p>
+</li>
+<li>
+<p>二分法求解方程的条件是，初始范围必须包含根</p>
+</li>
+<li>
+<p>列表是个筐，什么都能往里装，甚至可以往里装语句，比如列表推导式：[expression for item in iterable], a = [i for i in range(0, 10)], 更有甚者，可以这样写 [表达式 for 变量 in 列表 if 条件]，a = [i for i in range(0, 10) if i % 2 == 0]，更有甚者，可以这样写 [表达式 for 变量 in 列表 if 条件 if 条件]</p>
+</li>
+<li>
+<p>相应的，字典也有字典推导式</p>
+</li>
+<li>
+<p>匿名函数只能写一个表达式，多了不行，不用写return，表达式的值会自动返回</p>
+</li>
+<li>
+<p>map(function, iterable, …)，后面的iterable参数可以不止有1个。</p>
+</li>
+<li>
+<p>map()函数，当有多个可迭代对象时，最短的可迭代对象耗尽则整个迭代就将结束。比如 min = map(min, L1, L2), 其中L1和L2是两个长度不同的列表，这个表达式的作用是依次取出L1和L2对应的元素并拿出小的那一个，当L1遍历完了，就会结束。</p>
+</li>
+<li>
+<p>map(function, iterable,…)还可用于数据清洗</p>
+</li>
+<li>
+<p>(i for i in range(0, 10) if i % 2 == 0) 这是生成器表达式，和列表推导式的区别就是把[]换成(),生成器遵循迭代器的协议，有惰性，需要的时候才去取数据，这样减少占用内存消耗，生成器对象也是可迭代的，需要取数据的时候，就用循环打印出来，比如：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = (i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">10</span>) <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="comment"># 打印不出来，因为我们还没写出需要用到生成器的句子</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="comment"># 能打印出来，因为我们已经写出了需要生成器的句子</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>生成器用于数据量比较大的情况，否则就没必要</p>
+</li>
+<li>
+<p>类是对象的模板或蓝图，类是对象的抽象化，对象是类的实例化。类不代表具体的事物，而对象表示具体的事物</p>
+</li>
+<li>
+<p>创建函数的关键字是def，创建类的关键字是class，</p>
+</li>
+<li>
+<p>构造器，迭代器，生成器，别搞混了，python中的构造器必须有，不同于java</p>
+</li>
+<li>
+<p><em>init</em>()方法的self参数指向创建的实例本身，第一个参数，永远都是self，并且实例化的时候不用传入self的实参，解释器会自动传入</p>
+</li>
+<li>
+<p>在类里面定义的方法，和普通的函数的唯一区别是，第一个参数是self，其他没有什么区别</p>
+</li>
+<li>
+<p>文件写完一定要close，否则会占用内存，或者程序突然崩溃，那么文件就白写了</p>
+</li>
+<li>
+<p>文件路径，win用\，Unix用/</p>
+</li>
+<li>
+<p>文件对象不仅是一个可迭代的，它是一个迭代器，这就是为什么它只能遍历文件一次(读完后光标在文本最末位)。您可以使用.seek(0)重置文件光标，但在大多数情况下，您应该只迭代一次文件。</p>
+</li>
+<li>
+<p>由于读写文件可能产生error，一旦出错，后面的f.close()可能不会被调用，可靠的方法是用with，不仅会自动关闭文件，而且出错了也能关闭</p>
+</li>
+<li>
+<p>类里面的方法可以返回值</p>
+</li>
+<li>
+<p>在 Python 中，有一个特殊的常量 None（N 必须大写）。和 False 不同，它不表示 0，也不表示空字符串，而表示没有值，也就是空值。<br />
+这里的空值并不代表空对象，即 None 和 []、“” 不同<br />
+None 有自己的数据类型，我们可以在 IDLE 中使用 type() 函数查看它的类型，执行代码如下：type(None) &lt;class ‘NoneType’&gt;<br />
+它属于 NoneType 类型。需要注意的是，None 是 NoneType 数据类型的唯一值（其他编程语言可能称这个值为 null、nil 或 undefined），也就是说，我们不能再创建其它 NoneType 类型的变量，但是可以将 None 赋值给任何变量。如果希望变量中存储的东西不与任何其它值混淆，就可以使用 None。除此之外，None 常用于 assert、判断以及函数无返回值的情况。举个例子，在前面章节中我们一直使用 print() 函数输出数据，其实该函数的返回值就是 None。因为它的功能是在屏幕上显示文本，根本不需要返回任何值，所以 print() 就返回 None。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>spam = print(‘Hello!’)<br />
+Hello!</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>None == spam<br />
+True</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>对于所有没有 return 语句的函数定义，Python 都会在末尾加上 return None，使用不带值的 return 语句（也就是只有 return 关键字本身），那么就返回 None。</p>
+</li>
+<li>
+<p>Python中print函数中中逗号和加号的区别：<br />
+print(“hello” + “world”)<br />
+输出：helloworld<br />
+print(“hello”, “world”)<br />
+输出：hello world</p>
+<p>这里发现加号的作用是连接字符串 而逗号相当于用空格连接字符串。</p>
+<p>print(“hello” + 123)：<br />
+输出：TypeError: must be str, not int<br />
+print(“hello”, 123)<br />
+输出：hello 123、<br />
+这里发现加号在Str类型与Num类型相加的出现了类型错误 逗号连接正常并返回<strong>字符串结果</strong>。</p>
+<p>加号 + ：两边只能是相同数据类型，在Python中主要是运算符的存在，而字符串等类型相加只是Python中的内置方法。<br />
+逗号 , : 在这里逗号更多的代表用空格的连接。</p>
+<p>当 + 号两边都是列表时，可以将两个列表拼起来</p>
+</li>
+<li>
+<p>upper()方法遇到大写字母和其他字符时，都不做动作，只有碰见小写字母时才会做动作</p>
+</li>
+<li>
+<p>str.upper()，返回原字符串的副本，这个方法会return一个新的字符串，但不会改动原来字符串的内容，如果单纯 str.upper() 再输出str, 发现str没有变化，但是str2 = str.upper()，就可以把改动后的新字符串保存在str2中</p>
+</li>
+<li>
+<p>print() 输出单个换行符</p>
+</li>
+<li>
+<p>二维数组的切片：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = np.random.rand(<span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line">a[<span class="number">0</span>:<span class="number">3</span>, <span class="number">0</span>:<span class="number">3</span>] = <span class="number">3</span></span><br><span class="line"><span class="built_in">print</span>()</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>JAVA中构造方法，实例方法，类方法，有什么区别？</p>
+<p>构造方法：构造方法是用来构造类的对象的，方法名和类名相同没有返回值。一般用 new 构造方法名() 来创建该类的对象。在不写构造方法的情况下会有一个默认的无参构造方法，当然你也可以重写和重载构造方法。</p>
+<p>实例方法：即：成员方法。简单地说就是可以通过类的实例（某个对象）调用的方法，也就是我们正常情况下使用的方法。</p>
+<p>类方法：简单地说就是直接可以用类名调用的方法，也就是被关键字static修饰的方法，它不需要创建类的对象来调用该方法。</p>
+<p>看到这里，我们明白了，python中的实例方法不是构造器，和java中的实例方法一样，但是java/C++中的静态方法、类方法和python中的静态方法、类方法可不一样，</p>
+</li>
+<li>
+<p>python 可以函数嵌套定义，但是C/C++语言不行</p>
+</li>
+<li>
+<p>decorator的作用:在保证原本函数不改变的前提下，直接给这个函数增加一些功能</p>
+</li>
+<li>
+<p>实例方法可以用实例对象调用，也可以用类去调用，当使用类去调用时注意要传入第一个参数</p>
+</li>
+<li>
+<p>类方法可以用实例对象去调用，此时decorator会忽略实例对象而自动传入实例对象所属的类，也可以用类去调用</p>
+</li>
+<li>
+<p>静态方法可以用实例对象调用也可以用类去调用</p>
+</li>
+<li>
+<p>python类属性和实例属性不一样，举个例子</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>:</span><br><span class="line">    age = <span class="number">18</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        self.age = <span class="number">18</span></span><br></pre></td></tr></table></figure>
+<p>前者的age是类属性，每一个Person对象都能访问到age这个类属性，但在Person的实例化对象中没法修改age的值，也就是说每个实例化对象的age都是18且只能是18，<br />
+但是后者那个age是实例属性，每一个Person对象自带age这个属性，但这个属性属于这个实例对象，修改其中一个实例对象的age不会影响其他实例对象的age值<br />
+这一点和java不一样</p>
+</li>
+<li>
+<p>python set方法去修改私有属性，很多人觉得多此一举，本来把属性设置成私有就是为了不能随便改动它，又定义一个set方法去修改私有属性的值，那不是脱了裤子放屁吗？其实我们有时候设置成私有属性不是让它变得不可修改，而是让它变得不能被随意修改，因为修改它必须调用set方法，所以，我们可以在set方法里面加一些条件，让传进set方法里面的参数做一些限制，使得私有属性修改后的值是恰当的合理的。如果不用私有属性+set方法，直接在类外面就可以修改这个属性，那么我们想在模块的什么地方修改就能在模块的什么地方修改，这样的话麻烦就来了，在修改的那个地方必须做判定，即修改后的新值合不合理，在每个修改属性的地方都要做一个这样的判定，很麻烦，而且容易漏，(如果这个属性恰好是银行存款额，又忘记判定，就容易出事)所以属性修改，采用私有属性+set方法的形式，减少代码重复度，也不会有忘记的情况。这一点python和java是一样的</p>
+</li>
+<li>
+<p>输入一个整形列表：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split(<span class="string">&#x27;,&#x27;</span>)))</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>切片有一个强大功能是给切片赋值，如果把切片放在赋值语句的左边，或把它作为del操作的对象，我们就可以对序列进行嫁接、切除或就地修改操作。</p>
+</li>
+<li>
+<p>python切片：超出索引范围的切片参数，可以看成把list以空元素延长，进行切片操作后，去掉空元素后得到结果，例如：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[-<span class="number">100</span>:<span class="number">5</span>]</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">5</span>:<span class="number">100</span>]</span><br><span class="line">[<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[-<span class="number">100</span>:<span class="number">100</span>]</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">100</span>:<span class="number">1000</span>]</span><br><span class="line">[]</span><br></pre></td></tr></table></figure>
+<p>若start比stop大，则得到空list,</p>
+</li>
+<li>
+<p>列表切片很有用，比如切片赋值操作：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = <span class="built_in">list</span>(<span class="string">&quot;0123456789&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>l</span><br><span class="line">[<span class="string">&#x27;0&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;4&#x27;</span>, <span class="string">&#x27;5&#x27;</span>, <span class="string">&#x27;6&#x27;</span>, <span class="string">&#x27;7&#x27;</span>, <span class="string">&#x27;8&#x27;</span>, <span class="string">&#x27;9&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>l[<span class="number">6</span>:] = <span class="built_in">list</span>(<span class="string">&quot;abcdef&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>l </span><br><span class="line">[<span class="string">&#x27;0&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;4&#x27;</span>, <span class="string">&#x27;5&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;f&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>l[<span class="number">5</span>:<span class="number">8</span>] = [<span class="string">&quot;g&quot;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>l </span><br><span class="line">[<span class="string">&#x27;0&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;4&#x27;</span>, <span class="string">&#x27;g&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;f&#x27;</span>]</span><br><span class="line"><span class="comment"># 也可以不替换原有元素情况下加入新元素</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = <span class="built_in">list</span>(<span class="string">&quot;abcd&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>l </span><br><span class="line">[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>l[<span class="number">2</span>:<span class="number">2</span>] = <span class="built_in">list</span>(<span class="string">&quot;12&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>l </span><br><span class="line">[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>]</span><br><span class="line"><span class="comment"># 再或者可以这样插入</span></span><br><span class="line">s = <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">10</span>))</span><br><span class="line">s[<span class="number">3</span>:<span class="number">2</span>] = [<span class="number">11</span>, <span class="number">12</span>]</span><br><span class="line"><span class="built_in">print</span>(s)    <span class="comment"># 输出[0, 1, 2, 11, 12, 3, 4, 5, 6, 7, 8, 9]</span></span><br><span class="line"><span class="comment"># 删除元素</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">10</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>l</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">del</span> l[<span class="number">5</span>:<span class="number">7</span>]</span><br></pre></td></tr></table></figure>
+<p>当然，切片赋值，步长也可以不等于1，举例，给列表索引为偶数的元素排序</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().strip(<span class="string">&#x27;[]&#x27;</span>).split(<span class="string">&#x27;,&#x27;</span>)))</span><br><span class="line">n[::<span class="number">2</span>] = <span class="built_in">sorted</span>(n[::<span class="number">2</span>], reverse=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p>但是，切片赋值，给序列的切片部分新的赋值必须是可迭代类型，直接给列表切片赋一个整型会报错</p>
+</li>
+<li>
+<p>遍历字典键值对最pythonic的方法就是是使用.items()方法。items() 方法把字典中每对 key 和 value 组成一个元组，并把这些元组放在列表中返回。</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> k,v <span class="keyword">in</span> dict_1.items():</span><br><span class="line">    <span class="built_in">print</span>(k,<span class="string">&quot;&gt;&gt;&quot;</span>,v)</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>给字典按值排序：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s2 = <span class="built_in">sorted</span>(s.items(), key=operator.itemgetter(<span class="number">1</span>))</span><br><span class="line"><span class="comment"># s是一个字典，sorted返回一个新列表，但是列表的元素是一个个包含键值对的元组</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>python 中 List.count 和 str.count 不一样，Python str.count() 方法用于统计字符串里某个字符或子字符串出现的次数。List.count(obj) 方法用于统计某个元素在列表中出现的次数。obj – 列表中统计的对象</p>
+</li>
+<li>
+<p>找出列表中出现次数最多的元素：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>]</span><br><span class="line">maxlabel = <span class="built_in">max</span>(a,key=a.count)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">DifferentLee</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/07/22/Python_Learn_Tips/">http://example.com/2022/07/22/Python_Learn_Tips/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">下水道灵魂画手</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/./img/TaylorSwift3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/22/PHP_SetCookie_Problem/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">关于php学习中setcookie的疑惑</div></div></a></div><div class="next-post pull-right"><a href="/2022/07/22/form_name_Problem/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">HTML中表单的input标签 name属性有无[]的区别</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/WangYouSheng.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">DifferentLee</div><div class="author-info__description">一次编译，到处运行</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/DifferentLee" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:liyiraner@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.facebook.com/profile.php?id=100083266883262" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a><a class="social-icon" href="https://www.instagram.com/accounts/login/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram-square"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/09/24/Web_PHP_Learn/" title="Web程序设计"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Web程序设计"/></a><div class="content"><a class="title" href="/2022/09/24/Web_PHP_Learn/" title="Web程序设计">Web程序设计</a><time datetime="2022-09-24T07:42:10.000Z" title="发表于 2022-09-24 15:42:10">2022-09-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/19/C_Print_icon/" title="C语言控制台打印图标小技巧"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言控制台打印图标小技巧"/></a><div class="content"><a class="title" href="/2022/09/19/C_Print_icon/" title="C语言控制台打印图标小技巧">C语言控制台打印图标小技巧</a><time datetime="2022-09-18T16:00:00.000Z" title="发表于 2022-09-19 00:00:00">2022-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/05/CLion-Single-File-Execution/" title="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题"/></a><div class="content"><a class="title" href="/2022/09/05/CLion-Single-File-Execution/" title="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题">解决CLion中建立多个c/cpp文件(多个main函数共存)的问题</a><time datetime="2022-09-05T07:08:12.000Z" title="发表于 2022-09-05 15:08:12">2022-09-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/30/FunctionLogin-1/" title="小作业1-登录功能(控制台)"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="小作业1-登录功能(控制台)"/></a><div class="content"><a class="title" href="/2022/08/30/FunctionLogin-1/" title="小作业1-登录功能(控制台)">小作业1-登录功能(控制台)</a><time datetime="2022-08-30T10:30:31.000Z" title="发表于 2022-08-30 18:30:31">2022-08-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/21/Java-learning/" title="韩总Java修仙"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="韩总Java修仙"/></a><div class="content"><a class="title" href="/2022/08/21/Java-learning/" title="韩总Java修仙">韩总Java修仙</a><time datetime="2022-08-21T08:23:00.000Z" title="发表于 2022-08-21 16:23:00">2022-08-21</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/./img/TaylorSwift3.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By DifferentLee</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">见到您，我高兴坏了😍</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script id="canvas_nest" defer="defer" color="255,255,0" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="咱,俩,谁,是,小,牛,马" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
