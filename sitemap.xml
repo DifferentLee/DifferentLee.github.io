@@ -2,18 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2022/07/24/WengKai-C/</loc>
+    <loc>http://example.com/2022/07/22/Git_Learn/</loc>
     
-    <lastmod>2022-11-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2022/07/22/Python_Learn_Tips/</loc>
-    
-    <lastmod>2022-11-09</lastmod>
+    <lastmod>2022-11-16</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -22,7 +13,7 @@
   <url>
     <loc>http://example.com/2022/08/21/Java-learning/</loc>
     
-    <lastmod>2022-11-06</lastmod>
+    <lastmod>2022-11-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -31,7 +22,25 @@
   <url>
     <loc>http://example.com/2022/09/24/Web_PHP_Learn/</loc>
     
-    <lastmod>2022-11-06</lastmod>
+    <lastmod>2022-11-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/07/22/Python_Learn_Tips/</loc>
+    
+    <lastmod>2022-11-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/07/24/WengKai-C/</loc>
+    
+    <lastmod>2022-11-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -157,7 +166,7 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2022-11-12</lastmod>
+    <lastmod>2022-11-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

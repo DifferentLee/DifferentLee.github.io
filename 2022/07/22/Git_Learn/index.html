@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>初尝Git | 下水道灵魂画手</title><meta name="author" content="DifferentLee"><meta name="copyright" content="DifferentLee"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="在idea上Git push  提示hint: not have locally. This is usually caused by another repository push原因：  在 GitHub上创建一个仓库A，并且初始化了readme.md这个文档. 在本地用 Git Bash初始化仓库A(一开始没有从GitHub上拉下来). 本地仓库跟远程仓库的版本不一样导致的,因为执行在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初尝Git">
+<meta property="og:url" content="http://example.com/2022/07/22/Git_Learn/index.html">
+<meta property="og:site_name" content="下水道灵魂画手">
+<meta property="og:description" content="在idea上Git push  提示hint: not have locally. This is usually caused by another repository push原因：  在 GitHub上创建一个仓库A，并且初始化了readme.md这个文档. 在本地用 Git Bash初始化仓库A(一开始没有从GitHub上拉下来). 本地仓库跟远程仓库的版本不一样导致的,因为执行在">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/TaylorSwift3.jpg">
+<meta property="article:published_time" content="2022-07-22T07:42:10.000Z">
+<meta property="article:modified_time" content="2022-11-16T13:39:16.563Z">
+<meta property="article:author" content="DifferentLee">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/TaylorSwift3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/07/22/Git_Learn/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '初尝Git',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-11-16 21:39:16'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="下水道灵魂画手" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/WangYouSheng.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 小牛马的主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 小牛马的档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 小牛马的标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 小牛马的分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/./img/TaylorSwift3.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">下水道灵魂画手</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 小牛马的主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 小牛马的档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 小牛马的标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 小牛马的分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">初尝Git</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-22T07:42:10.000Z" title="发表于 2022-07-22 15:42:10">2022-07-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-16T13:39:16.563Z" title="更新于 2022-11-16 21:39:16">2022-11-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="初尝Git"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><ul>
+<li>
+<p>在idea上Git push  提示hint: not have locally. This is usually caused by another repository push原因：</p>
+<ol>
+<li>在 GitHub上创建一个仓库A，并且初始化了readme.md这个文档.</li>
+<li>在本地用 Git Bash初始化仓库A(一开始没有从GitHub上拉下来).</li>
+<li>本地仓库跟远程仓库的版本不一样导致的,因为执行在 步骤1的时候，远程的版本库会有个 “commit <a target="_blank" rel="noopener" href="http://readme.md">readme.md</a>”这个操作记录,本地仓库是不知道你有这个提交的，也就是说这个记录没在本地仓库是不存在的，所以俩个版本是不一致的.</li>
+</ol>
+</li>
+<li>
+<p>两个不同的本地仓是可以提交到同一个远程仓的，这也是git可以多人协作开发的原因，但是切记，push前一定要pull远程仓到本地仓，防止远程仓和本地仓不一致导致push被rejected</p>
+</li>
+<li>
+<p>即使仓库是public，也只有被邀请的成员可以commit，随便来个人是不能push过去的</p>
+</li>
+<li>
+<p>总之一句话，基于A分支创建B分支，在B分支会将A分支里面所有内容都都带过来来，如果你在B分支里面，不需要维护A分支过来的文件，就不要对这些你不要维护的文件进行任何操作，否则合并的时候就会改变A里面你不该改动的文件，可以把B看作A的一个子类</p>
+</li>
+<li>
+<p>如果在本地仓删除或增加一个文件，那么push后，远程仓也会删除或增加相应文件</p>
+</li>
+<li>
+<p>远程仓增加或删除一个文件，那么pull到本地，会把那个增加或删除的文件pull下来</p>
+</li>
+<li>
+<p>如果远程仓增加或者删除一个文件或者增加删除一个分支，但是我本地仓没有及时pull下来，我本地仓在想push时，会报错，这时需要先pull,再push，所以在开发的时候，需要及时pull，再push</p>
+</li>
+<li>
+<p>在本地仓用 git switch -c dev 新建dev分支后，一定要用  git push --set-upstream origin dev 或者 git push origin dev  把本地分支push到远程仓，远程仓才能出现新建的分支，修改分支内容并push到远程仓的分支才不会报错</p>
+</li>
+<li>
+<p>如果本地文件夹新增的文件没有commit到本地仓，那么push过去的还是老文件夹</p>
+</li>
+<li>
+<p>本地仓选择不同的分支，本地文件夹的内容会随着本地仓分支的不同而改变</p>
+</li>
+<li>
+<p>本地分支合并后，一定要push到远程才能让远程分支也合并</p>
+</li>
+<li>
+<p>不合并之前，分支的任何增删操作不会影响到主分支，但是合并后就会</p>
+</li>
+<li>
+<p>一个本地仓可以对应两个或者多个远程仓操作</p>
+</li>
+<li>
+<p>远程仓删除一个文件，本地仓pull之后，本地仓对应的文件也会被删除</p>
+</li>
+<li>
+<p>本地新建一个dev分支后，推送到远程仓1，那么远程仓1就多一个dev分支，推送到远程仓2，远程仓2就多一个dev分支</p>
+</li>
+<li>
+<p>idea上修改文件以后不能直接push，要先commit再push，或者commit&amp;push一起，否则push的还是老文件</p>
+</li>
+<li>
+<p>IDEA上上分支有书签代表是当前分支，只有处于当前分支，才能把其他分支合并到当前分支，比如A处于当前分支，那么B分支此时可以合并到A分支，不能A分支合并到B分支，除非B分支处在当前分支</p>
+</li>
+<li>
+<p>git 命令行有所动作，idea也会跟着变，比如切换分支</p>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">DifferentLee</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/07/22/Git_Learn/">http://example.com/2022/07/22/Git_Learn/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">下水道灵魂画手</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/./img/TaylorSwift3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/22/C_Learn_Tips/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">C语言学习tips</div></div></a></div><div class="next-post pull-right"><a href="/2022/07/22/Discrete_mathematics/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">贾老师的离散数学</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/WangYouSheng.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">DifferentLee</div><div class="author-info__description">一次编译，到处运行</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/DifferentLee" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:liyiraner@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.facebook.com/profile.php?id=100083266883262" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a><a class="social-icon" href="https://www.instagram.com/accounts/login/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram-square"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/09/24/Web_PHP_Learn/" title="Web程序设计"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Web程序设计"/></a><div class="content"><a class="title" href="/2022/09/24/Web_PHP_Learn/" title="Web程序设计">Web程序设计</a><time datetime="2022-09-24T07:42:10.000Z" title="发表于 2022-09-24 15:42:10">2022-09-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/19/C_Print_icon/" title="C语言控制台打印图标小技巧"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言控制台打印图标小技巧"/></a><div class="content"><a class="title" href="/2022/09/19/C_Print_icon/" title="C语言控制台打印图标小技巧">C语言控制台打印图标小技巧</a><time datetime="2022-09-18T16:00:00.000Z" title="发表于 2022-09-19 00:00:00">2022-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/05/CLion-Single-File-Execution/" title="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题"/></a><div class="content"><a class="title" href="/2022/09/05/CLion-Single-File-Execution/" title="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题">解决CLion中建立多个c/cpp文件(多个main函数共存)的问题</a><time datetime="2022-09-05T07:08:12.000Z" title="发表于 2022-09-05 15:08:12">2022-09-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/30/FunctionLogin-1/" title="小作业1-登录功能(控制台)"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="小作业1-登录功能(控制台)"/></a><div class="content"><a class="title" href="/2022/08/30/FunctionLogin-1/" title="小作业1-登录功能(控制台)">小作业1-登录功能(控制台)</a><time datetime="2022-08-30T10:30:31.000Z" title="发表于 2022-08-30 18:30:31">2022-08-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/21/Java-learning/" title="韩总Java修仙"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="韩总Java修仙"/></a><div class="content"><a class="title" href="/2022/08/21/Java-learning/" title="韩总Java修仙">韩总Java修仙</a><time datetime="2022-08-21T08:23:00.000Z" title="发表于 2022-08-21 16:23:00">2022-08-21</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/./img/TaylorSwift3.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By DifferentLee</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">见到您，我高兴坏了😍</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script id="canvas_nest" defer="defer" color="255,255,0" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="咱,俩,谁,是,小,牛,马" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>

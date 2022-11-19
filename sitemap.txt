@@ -1,7 +1,8 @@
-http://example.com/2022/07/24/WengKai-C/
-http://example.com/2022/07/22/Python_Learn_Tips/
+http://example.com/2022/07/22/Git_Learn/
 http://example.com/2022/08/21/Java-learning/
 http://example.com/2022/09/24/Web_PHP_Learn/
+http://example.com/2022/07/22/Python_Learn_Tips/
+http://example.com/2022/07/24/WengKai-C/
 http://example.com/2022/07/22/Discrete_mathematics/
 http://example.com/2022/07/22/C_Learn_Tips/
 http://example.com/2022/09/19/C_Print_icon/
