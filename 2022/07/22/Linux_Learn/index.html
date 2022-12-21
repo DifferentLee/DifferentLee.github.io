@@ -1,0 +1,477 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Linux操作系统 | 下水道灵魂画手</title><meta name="author" content="DifferentLee"><meta name="copyright" content="DifferentLee"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="win系统上cmd是DOS系统的影子 OS是裸机之上的第一层软件，与硬件关系极为密切 从技术上来说，Linus Benedict Torvalds开发的 Linux 只是一个内核。内核指的是一个提供设备驱动、文件系统、进程管理、网络通信等功能的系统软件，内核并不是一套完整的操作系统，它只是操作系统的核心。一些组织或厂商将 Linux 内核与各种软件和文档包装起来，并提供系统安装界面和系统配置、设">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux操作系统">
+<meta property="og:url" content="http://example.com/2022/07/22/Linux_Learn/index.html">
+<meta property="og:site_name" content="下水道灵魂画手">
+<meta property="og:description" content="win系统上cmd是DOS系统的影子 OS是裸机之上的第一层软件，与硬件关系极为密切 从技术上来说，Linus Benedict Torvalds开发的 Linux 只是一个内核。内核指的是一个提供设备驱动、文件系统、进程管理、网络通信等功能的系统软件，内核并不是一套完整的操作系统，它只是操作系统的核心。一些组织或厂商将 Linux 内核与各种软件和文档包装起来，并提供系统安装界面和系统配置、设">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/TaylorSwift3.jpg">
+<meta property="article:published_time" content="2022-07-22T07:42:10.000Z">
+<meta property="article:modified_time" content="2022-12-21T02:46:24.189Z">
+<meta property="article:author" content="DifferentLee">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/TaylorSwift3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/07/22/Linux_Learn/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Linux操作系统',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-12-21 10:46:24'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="下水道灵魂画手" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/WangYouSheng.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 小牛马的主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 小牛马的档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 小牛马的标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 小牛马的分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/./img/TaylorSwift3.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">下水道灵魂画手</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 小牛马的主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 小牛马的档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 小牛马的标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 小牛马的分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux操作系统</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-22T07:42:10.000Z" title="发表于 2022-07-22 15:42:10">2022-07-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-21T02:46:24.189Z" title="更新于 2022-12-21 10:46:24">2022-12-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Linux操作系统"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><ul>
+<li>win系统上cmd是DOS系统的影子</li>
+<li>OS是裸机之上的第一层软件，与硬件关系极为密切</li>
+<li>从技术上来说，Linus Benedict Torvalds开发的 Linux 只是一个内核。内核指的是一个提供设备驱动、文件系统、进程管理、网络通信等功能的系统软件，内核并不是一套完整的操作系统，它只是操作系统的核心。一些组织或厂商将 Linux 内核与各种软件和文档包装起来，并提供系统安装界面和系统配置、设定与管理工具，就构成了 Linux 的发行版本。</li>
+<li>X Windows 和 Windows 很像，但是不是一个结构</li>
+<li>$ 代表普通用户， # 号代表超级用户</li>
+<li>unix是一个多用户多任务的操作系统。早期电脑昂贵，所以当时使用便宜的设备连接到电脑上(当时还没有键盘和显示器，使用纸带和卡片来输入输出)来使用操作系统，这个便宜的设备就是终端，也可以认为终端是一种控制台。所以可以认为电脑本身是console终端，便宜的连接设备是物理终端pty。</li>
+<li>Linux是类unix系统，所以也继承了终端的特性。但是后来电脑逐渐便宜，也出现了显示器和键盘，所以可以使用键盘当作输入终端，显示器当作输出终端，这些终端就是虚拟终端，虚拟终端其实就是虚拟控制台，或者说是一个虚拟设备。</li>
+<li>clear命令清除屏幕上的信息，它类似于DOS中的CLS命令</li>
+<li>一般命令格式的命令名、选项、参数之间用空格或者制表符隔开，否则会被认为是一坨</li>
+<li>bash是终端的名字</li>
+<li>文件是被命名的相关信息的集合体</li>
+<li>文件的成分：
+<ol>
+<li>索引节点</li>
+<li>数据：文件的实际内容</li>
+</ol>
+</li>
+<li>Linux的文件名和Windows的文件名命名规则一样</li>
+<li>Linux只有目录，没有硬盘的分区</li>
+<li>和Windows一样，Linux所有的目录都是从根目录开始，&quot;/&quot;</li>
+<li>利用扩展名可以区分文件的属性</li>
+<li>以圆点 . 开头的文件名是隐含文件</li>
+<li>文件名通配符
+<ol>
+<li>
+<ul>
+<li>:0-inf 个字符，匹配当前目录下所有文件，除了.文件</li>
+</ul>
+</li>
+<li>？:1个字符</li>
+<li>[] :与[]中的任意一个匹配，比如 letter[123], 可以是letter1、letter2……</li>
+</ol>
+</li>
+<li>“&gt;”  是重定向，是覆盖原有文件的内容，&gt;&gt;是追加，不会删除源文件的内容</li>
+<li>root下面的子目录
+<ul>
+<li>root的父目录是自己，/ 代表根目录</li>
+<li>home 文件夹是所有用户的主目录，里面每个用户有自己的文件夹</li>
+<li>bin放可以执行的二进制文件</li>
+<li>sbin放的管理系统命令的文件</li>
+<li>boot存放启动系统时引导的文件</li>
+<li>etc文件放配置文件，子文件有password 、</li>
+<li>root超级用户的工作目录</li>
+<li>lib 存放共享库</li>
+<li>dev 存放标识设备的目录</li>
+<li>lost+found 系统非正常关闭的目录</li>
+<li>mnt 存放安装系统的安装点</li>
+<li>tmp存放临时文件</li>
+<li>usr可供所有用户共享</li>
+<li>var系统运行时要改变的数据</li>
+</ul>
+</li>
+<li>绝对路径名总是以 / 开头，它代表根目录</li>
+<li>rmdir 只能删除空目录，有东西的目录不能删</li>
+<li>链接：一个文件起多个名字的功能
+<ol>
+<li>硬链接：如果一个文件有硬链接，那么在其中一个目录中删除该文件，但是别的地方还有文件名指向该文件，那么在别的地方还能通过另一个文件名访问到该文件，类似程序设计中的引用机制和垃圾回收机制，只要该变量还被指针指着，那么就不会被回收。</li>
+<li>软链接(符号链接)：建立一个快捷方式，是一个新的文件。</li>
+</ol>
+</li>
+<li>进程来反映程序在计算机里面动态执行的过程，一个程序可以对应几个进程</li>
+<li>现代OS都是多任务OS，即同一时刻，里面有多个程序在执行</li>
+<li>CPU的运算非常快，但是程序运行中，可能出现很多等待资源加载，等待输入，等待输出的状态(比如要输入密码才能继续执行，此时应该放弃对CPU的占用)，此时CPU会空转，这样CPU利用效率不高，因此人们设置多道程序。比如A程序运行，A在等待输入，那么CPU就会跑过去执行B程序。等到A输入完了，CPU再回来执行A程序。</li>
+<li>多道程序设计：内存中同时存放多道程序，交替地在CPU中运行</li>
+<li>程序写完保存下来是静态的，但是并发执行时，由于要和其他程序共用内存，CPU等，所以会处于一种执行、暂停执行、执行的状态。此时需要一个新的动态概念来描述这种动态的状态。为了描述程序地动态执行过程，就引入了进程的概念。</li>
+<li>进程的特征
+<ol>
+<li>动态性</li>
+<li>并发性：</li>
+<li>调度性：调度的基本单位就是进程</li>
+<li>异步性：各个进程向前推进的速度是不可预知的</li>
+<li>结构性：程序段，数据段，控制结构组成</li>
+</ol>
+</li>
+<li>进程的基本状态：
+<ol>
+<li>运行态：在CPU上执行的状态</li>
+<li>就绪态</li>
+<li>阻塞态：程序执行着，突然要等待一个输入停下来了。</li>
+</ol>
+</li>
+<li>进程可以作为资源分配的单位，资源包括硬件(CPU,GPU,内存……)、软件。最紧张的资源是CPU，有专门的调度算法用来调度进程。</li>
+<li>PID是进程的编号，在OS里面是唯一的，用PID识别进程</li>
+<li>OS会先调度优先级高的进程，现代OS一般只允许普通用户降低进程优先级，而不允许升高进程优先级。除非root用户</li>
+<li>shell是包裹linux内核的壳，用户可以通过shell和linux内核交互</li>
+<li>ubuntu 安装日历 sudo apt install ncal</li>
+<li>ubuntu 修改系统时间无效，参见 <a target="_blank" rel="noopener" href="https://blog.csdn.net/dengweilu3964/article/details/102375882">ubuntu 修改系统时间无效</a></li>
+<li>info命令是Linux下info格式的帮助指令。阅读 info 格式的文档，和help命令具有相同的功能</li>
+<li>在linux中，“ll”命令指的是“ls -l”命令，它是“ls -l”命令的一个别名，但也不完全相同。ll会列出该文件下的所有文件信息，包括隐藏的文件，而ls -l只列出显式文件，说明这两个命令还是不等同的！</li>
+<li>Cat命令(concatenate的缩写)是Linux操作系统中使用最广泛的命令行实用工具之一。它是一个标准的Linux实用程序，用于查看文件的内容，而不需要在任何文本编辑器中打开它。cat命令的另一个主要用法是将多个文件串联到一个文件中。</li>
+<li>在LINUX中如何把2个文件中的内容合到另一个文件中
+<ol>
+<li>使用cat命令从文件中读入两个文件，然后将重定向到一个新的文件。这种方法可以一次性合并任意多个文件。</li>
+</ol>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">将file1.txt和file2.txt合并到file.txt</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> file1.txt file2.txt &gt; file.txt</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>只使用cat命令读入一个文件，然后使用&gt;&gt;将文本流追加到另一个文件的末位。</li>
+</ol>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">将file1.txt追加到file2.txt的末尾</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> file1.txt &gt;&gt; file2.txt</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>Linux head 命令, -n&lt;行数&gt; 显示的行数。head [-n num] | [-num] [-v] filename 当 -n 后面跟正数时，会打印正数行，若跟负数，则则显示除了最后|num|(绝对值)行的其余所有行，即显示前“总行数-|num|”。例如-100，打印除最后100行外所有行</li>
+<li>tail命令类似head，但是num前面加+号时，表示前面num-1行都不打印，然后打印剩下的</li>
+<li>Linux 中同时使用 head 和 tail 命令。由于tail和head命令打印文件的不同部分，我们可以将这两者结合起来打印一些文件内容的高级过滤。例如，如果要从任何文件的中间读取内容，则必须同时使用这两个命令。假设我们想要读文件的第 5 行到第 10 行/etc/passwd。首先， head command 将检索前 10 行， tail command 再从 head command 检索的前 10 行中检索最后 5 行 head 。<br />
+head -n 10 /etc/passwd | tail -n 5</li>
+<li>‘&gt;’ 是覆盖原有内容, ‘&gt;&gt;’ 是追加内容。二者均表示 将一条<strong>命令执行结果</strong>（标准输出，或者错误输出，本来都要打印到屏幕上面的）重定向其它输出设备（文件，打开文件操作符，或打印机等等）。就是这个输出本来是要输出到屏幕上的，现在重定向输出到某个文件等</li>
+<li>&lt;和&lt;&lt;：命令默认从键盘获得的输入，改成从文件，或者其它打开文件以及设备输入</li>
+<li>rgrep命令用于递归查找文件里符合条件的字符串。rgrep指令的功能和grep指令类似。类似 grep -r</li>
+<li>当重复的行并不相邻时，uniq 命令是不起作用的。这时我们就可以使用 sort</li>
+<li>cat命令法向文件添加内容的几种方法, 结尾的EOF要顶格，成对出现，可以其它字符代替。否则会报错</li>
+<li>comm 命令用于比较两个已排过序的文件。 diff可以直接输出比较结果，不要求事先对文件进行排序。对第一个文件提出修改建议使得第一个文件与第二个文件一致。</li>
+<li>将文件排序结果保存到原文件 不能只 sort 文件名 还得加上 -o 例如 sort testfile3 -o testfile3</li>
+<li>cd 若目录名称省略，则变换至使用者的 home 目录 (也就是刚 login 时所在的目录)</li>
+<li>~ 也表示为 home 目录 的意思， . 则是表示目前所在的目录， … 则表示目前目录位置的上一层目录。</li>
+<li>ln（英文全拼：link files）命令是一个非常重要命令，它的功能是为某一个文件在另外一个位置建立一个同步的链接。当我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，我们只要在某个固定的目录，放上该文件，然后在 其它的目录下用ln命令链接（link）它就可以，<strong>不必重复的占用磁盘空间</strong>。</li>
+<li>Linux文件系统中，有所谓的链接(link)，我们可以将其视为档案的别名，而链接又可分为两种 : 硬链接(hard link)与软链接(symbolic link)，硬链接的意思是一个档案可以有多个名称，而软链接的方式则是产生一个特殊的档案，该档案的内容是指向另一个档案的位置。硬链接是存在同一个文件系统中，而软链接却可以跨越不同的文件系统。不论是硬链接或软链接都不会将原本的档案复制一份，只会占用非常少量的磁碟空间。</li>
+<li></li>
+</ul>
+<ol>
+<li>
+<p>软链接：</p>
+<ol>
+<li>软链接，以路径的形式存在。类似于Windows操作系统中的快捷方式</li>
+<li>软链接可以 跨文件系统 ，硬链接不可以</li>
+<li>软链接可以对一个不存在的文件名进行链接</li>
+<li>软链接可以对目录进行链接</li>
+<li>给文件创建软链接，为log2013.log文件创建软链接link2013，如果log2013.log丢失，link2013将失效：</li>
+</ol>
+</li>
+<li>
+<p>硬链接：</p>
+<ol>
+<li>硬链接，以文件副本的形式存在。但不占用实际空间。</li>
+<li>不允许给目录创建硬链接</li>
+<li>硬链接只有在同一个文件系统中才能创建</li>
+<li>硬链接，ln 源文件名 符号链接文件名，源文件名和符号链接文件名是并列关系，源被删了，符号链接依然有效。硬链接实际上和源文件在硬盘中是同一个东西，效果类似于硬盘上的一个文件，在文件系统上，在我们看来有好多个文件一样。每次删除一个文件时，只要他还有其他的硬链接存在，这个文件就不会被真正删除。只有等所有的链接文件都删除掉了，这个文件才会被真正从硬盘上删除</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li>chmod（英文全拼：change mode）命令是控制用户对文件的权限的命令</li>
+<li>chmod命令可以使用八进制数来指定权限。文件或目录的权限位是由9个权限位来控制，每三位为一组，它们分别是文件所有者（User）的读、写、执行，用户组（Group）的读、写、执行以及其它用户（Other）的读、写、执行。历史上，文件权限被放在一个比特掩码中，掩码中指定的比特位设为1，用来说明一个类具有相应的优先级。这样的操作与[ugoa…][[±=][rwxX]的效果等价，比如 chmod a=rwx file 和 chmod 777 file 效果相同</li>
+<li>[权限掩码]是由3个八进制的数字所组成，比如721，721并不是一个数字，而是3个八进制数字组成的一串数字。</li>
+<li>umask可用来设定[权限掩码]。[权限掩码]是由3个八进制的数字所组成，将现有的存取权限减掉权限掩码后，即可产生建立文件时预设的权限。比如新建一个目录，其预设权限就是 777-022=755 等价于 drwxr-xr-x 。 drwxr-xr-x 这样读：d rwx r-x r-x
+<ol>
+<li>d:表示文件类型；</li>
+<li>rwx：表示文件所有者的对该文件所拥有的权限；</li>
+<li>r-x：表示文件所属组对该文件所拥有的权限；</li>
+</ol>
+</li>
+<li>umask -S u=rwx,g=rx,o=rx 和 umask 0022 等价</li>
+<li>sudo命令以系统管理者的身份执行指令，也就是说，经由 sudo 所执行的指令就好像是 root 亲自执行。</li>
+<li>chown 需要超级用户 root 的权限才能执行此命令。</li>
+<li>ps 命令有些与众不同，它的部分选项不能加入&quot;-&quot;，比如命令&quot;ps aux&quot;，其中&quot;aux&quot;是选项，但是前面不能带“-”。出现这样的情况，还要归咎于 UNIX 悠久的历史和庞大的派系。在不同的 Linux 发行版上，ps 命令的语法各不相同，为此，Linux 采取了一个折中的方法，即融合各种不同的风格，兼顾那些已经习惯了其它系统上使用 ps  命令的用户。</li>
+<li>当 Linux 内核尝试决定哪些运行中的进程可以访问 CPU 时，其中一个需要考虑的因素就是进程优先级的值（也称为 nice 值）。每个进程都有一个介于 -20 到 19 之间的 nice 值。默认情况下，进程的 nice 值为 0。-20（最高优先序）到 19（最低优先序）。进程的 nice 值，可以通过 nice 命令和 renice 命令修改，进而调整进程的运行顺序。nice 命令可以给要启动的进程赋予 NI 值，但是不能修改已运行进程的 NI 值。同 nice 命令恰恰相反，renice 命令可以在进程运行时修改其 NI 值，从而调整优先级。</li>
+<li>使用 nice 命令为一个进程设置 nice 值。记住一个普通用户可以给他拥有的进程设置 0 到 20 的 nice 值。只有 root 用户可以使用负的 nice 值。</li>
+<li>Linux 命令是使用终端与系统交互的好方法。但是，有时可能需要一段时间才能完成手头的任务。这迫使用户等待相当长的时间。这时可以让当前事务在后台运行。运行 Linux 后台命令的最简单方法是在命令后添加与号 (&amp;)。例如，如果从终端启动 gedit 文本编辑器，则在关闭编辑器之前无法使用 shell。但是，当您在命令中添加额外的 &amp; 时，您将能够立即使用 shell。比如：$ gedit &amp;</li>
+<li>对于需要长时间执行的任务，&amp;符号可以使当前终端窗口不被占用，这样就能继续在同一个终端上工作，甚至关闭终端窗口也不会影响任务的正常执行。不过需要注意的是，如果要求这个任务输出内容到标准输出中（例如 echo 或 ls），即便使用了 &amp;，也会等待这些输出任务在前台运行完毕；当使用 &amp;将一个进程放置到后台运行的时候，Bash 会提示这个进程的进程 ID。在 Linux 系统中运行的每一个进程都有一个唯一的进程 ID，我们可以使用进程 ID 来暂停、恢复或者终止对应的进程。</li>
+<li>nohup 英文全称 no hang up（不挂起）。用于在系统后台不挂断地运行命令，<strong>退出终端</strong>不会影响程序的运行。如果要停止运行，你需要使用以下命令查找到 nohup 运行脚本到 PID，然后使用 kill 命令来删除：ps -aux</li>
+<li>jobs命令：查看当前终端放入后台的工作</li>
+<li>wait是一个shell命令，它能保持等待状态， 直到指定进程运行完成，而且返回进程的退出状态值。 而且Wait命令还可以用于等待特定的进程ID和作业ID并返回其终止状态。在什么情况下需要使用Wait命令呢？​ 在执行较大的自动化脚本时，某些命令或者模块的运行依赖于其它命令或者模块的运行结果， 这时我们需要使这些依赖别的模块结果的模块一直等待， 直到被依赖的模块完成并返回， 然后执行后续的模块或命令，在这种情况下，我们可以使用Wait命令保持等待状态直到上一个模块结束。​ Wait命令可以用于监视先前的过程，根据被等待的命令的运行结果，它将返回Exit状态。例如，如果我们要等待进程ID是13245，我们可以使用“ wait 13245”， 当此进程（PID 13245）完成， wait命令将返回此进程（PID 13245）退出时的返回值。</li>
+<li>gzip命令用于压缩文件。文件经它压缩过后，其名称后面会多出&quot;.gz&quot;的扩展名。</li>
+<li>zip和gzip的区别
+<ol>
+<li>zip是将文件打包为zip格式的压缩文件</li>
+<li>gzip是将文件打包为tar.gz格式的压缩文件</li>
+<li>unzip是从zip包中解压出某个文件</li>
+<li>gunzip从tar.gz包中解压出某个文件</li>
+<li>gzip压缩后原来的文件则没有了，解压缩也一样</li>
+<li>zip压缩完会保留原文件</li>
+</ol>
+</li>
+<li>控制台的概念与终端含义非常相近，其实现在我们经常用它们表示相同的东西，但是在计算机的早期时代，它们确实是不同的东西。我们在平时的使用中压根就不区分 Linux 中的终端与控制台。</li>
+<li>根目录：每一个文件和目录从根目录开始，只有root用户具有该目录下的写权限。</li>
+<li>apt 命令执行需要超级管理员权限(root)，也就是前面必须加 sudo命令</li>
+<li>对于文件来说，它都有一个特定的所有者，也就是对该文件具有所有权的用户,即<strong>文件所有者</strong>。<strong>文件所有者</strong>以外的用户又可以分为<strong>文件所有者的同组用户</strong>和<strong>其他用户</strong>。因此，Linux系统按<strong>文件所有者user</strong>、<strong>文件所有者同组用户group</strong>和<strong>其他用户other</strong>来规定了不同的文件访问权限。</li>
+<li>chown命令用来更改文件属主，也可以同时更改文件属组：sudo chown root.root ceshi.txt</li>
+<li>Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。</li>
+<li>rm -rf命令十分危险，删除之前一定要三思。尤其以下命令</li>
+<li>Linux中根目录用/表示。而windows表示目录的方式与Linux有所不同，Windows下有磁盘分区的概念，而Linux下只有目录的概念，所以‘/’所表示的意义在两个系统中有所不同。
+<ol>
+<li>‘/’在linux中表示根目录。在Linux系统中，除根目录(root)以外，所有文件和目录都包含在相应的目录文件中。Linux文件系统采用带链接的树形目录结构，即只有一个根目录（通常用“/”表示），其中含有下级子目录或文件的信息；子目录中又可含有更下级的子目录或者文件的信息。这样一层一层地延伸下去，构成一棵倒置的树。</li>
+<li>‘/’在windows中也表示根目录，但此跟目录非彼根目录。windows对磁盘分区后会有多个磁盘，通常系统会装在C盘。windows有多个磁盘所以就会有‘多个根目录’，在dos命令模式下，在D盘的某文件夹中输入‘cd/’命令回车后会直接回到D盘的根目录。其它磁盘下也会回到该磁盘的目录。在哪个磁盘下使用‘/’，它就表示哪个磁盘的根目录。</li>
+</ol>
+</li>
+<li>服务器上的 Linux 是不安装图形界面的，只能在控制台模式下使用，以尽量节省服务器资源。而我们在学习过程中使用的 Linux 是带图形界面的，以满足初学者的需求，降低学习成本。</li>
+<li>Linux Unix win 的宿主语言都是C语言</li>
+<li>
+<ul>
+<li>每种机器的汇编语言还不同</li>
+</ul>
+</li>
+<li>CPU内部有指令集，因此可以知道目标代码里的每个01指令该做什么</li>
+<li>.lib是静态连接库文件，.dll是动态连接库文件</li>
+<li>gcc hello.c -o hello 会将 hello.c 文件预处理成 hello 文件，若不加 -o 即 gcc hello.c，则自动会生成 a.out 文件</li>
+<li>vim :%!xdd 查看程序在磁盘上的十六进制存储状态，显示出来的第一列是内存上的地址。回到文本格式按下:%!xdd -r</li>
+<li>:%!xdd -b 查看程序在磁盘上的二进制存储状态，</li>
+<li>进入gbd后，用 shell+ 的命令可以运行普通的linux命令</li>
+<li>shell也是一个软件，包裹着Linux内核的壳，用户可以通过shell与内核交互，不同发行版本的linux的shell还不同</li>
+<li>shell不需要编译，是解释执行的方式，JAVA也是解释执行</li>
+<li>shell是一种<strong>用户界面</strong>，它也是一个<strong>命令解释器</strong>，也是一种<strong>编程语言</strong></li>
+<li>安全性、稳定性比较高的环境，要求更稳定的shell，图形界面容易崩溃</li>
+<li>常用shell类型(Ubuntu用的是第4种)<br />
+1. Bourne shell (sh)<br />
+2. C-shell (csh)<br />
+3. Korn shell (ksh)<br />
+4. Bourne Again shell (bash)</li>
+<li>./ [文件名]，表示执行该文件(chmod 中改的 rwx 中的 x 就是可执行权限，如果不添加 x 权限，执行该文件时可能会提示权限不够)</li>
+<li>shell变量在赋值时 = 两边不能有空格</li>
+<li>$变量名 才能使用变量</li>
+<li>若字面量里面有<strong>空格</strong> <strong>制表符</strong> <strong>换行符</strong>，则必须用引号括起来</li>
+<li>shell脚本的注释是 #</li>
+<li>shell脚本的第一行写 #!/bin/bash 代表该shell脚本只能在bash类型的shell解释器下执行， #! 告诉系统其后路径所指定的程序即是解释此脚本文件的 Shell 程序。</li>
+<li>位置参数在脚本执行的时候自动赋值的，脚本名会自动赋给 $0</li>
+<li><strong>位置参数</strong>和<strong>shift</strong>会和循环结构配合使用</li>
+<li>if [ $leap -eq 0 ] if语句要加[]， 且[]里面要加空格</li>
+<li>Linux 3类引号
+<ol>
+<li>双引号 &quot;</li>
+<li>单引号 ’</li>
+<li>倒引号 `</li>
+</ol>
+</li>
+<li>除了3类引号和转义字符 \ 之外，其余字符都为普通字符</li>
+<li>后台进程的调度优先级都低于前台进程的优先级</li>
+<li>“|”是Linux管道命令操作符，简称管道符。使用此管道符“|”可以将两个命令分隔开，“|”左边命令的输出就会作为“|”右边命令的输入，此命令可连续使用，第一个命令的输出会作为第二个命令的输入，第二个命令的输出又会作为第三个命令的输入，依此类推。比如</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls | grep m?.c | wc -l</span><br></pre></td></tr></table></figure>
+<ul>
+<li>{} 不会新建进程，()会新建进程</li>
+<li>{}里面的值要和{}空格隔开，但是()不需要</li>
+<li>位置参数可以用来向shell脚本传值</li>
+<li>Shell 支持任意数目的分支，当分支比较多时，可以使用 if elif else 结构，此时分支结束时可以只有个 fi 但是若用 if else if 这种级联结构，则有多少if，结尾跟多少fi</li>
+<li>ps （英文全拼：process status）命令用于显示当前进程的状态，类似于 windows 的任务管理器。</li>
+<li>shell测试命令test、[ ]、[[ ]]</li>
+<li>test可用于测试表达式。在shell中，几乎所有的判断都使用test实现。</li>
+<li>条件测试时，在 [[ 中使用 &amp;&amp; 和 || , 在 [ 中使用 -a 和 -o 表示逻辑与和逻辑或。</li>
+<li>[] 完全等价于test，只是写法不同。双中括号[ [] ]基本等价于[] ，它支持更多的条件表达式，还允许在双中括号内使用逻辑运算符&quot;&amp;&amp;&quot;、&quot;||&quot;、&quot;!“和”()&quot;，但这些使用单中括号都能实现，只不过多写几个单中括号而已。单中括号[] 无法实现的功能是正则表达式匹配，而[ [] ]可以实现。因此，在能使用单中括号的情况下，无需考虑使用双中括号。</li>
+<li>shift命令用于对参数的移动(左移)，通常用于在不知道传入参数个数的情况下依次遍历每个参数然后进行相应处理，有一个shift 就向左移一位</li>
+<li>shell中的缩进与C语言中的缩进一样，没有实际意义</li>
+<li>break n 。n 表示跳出循环的层数，如果省略 n，则表示跳出当前的循环。</li>
+<li>echo &quot;today is <code>date</code> &quot; 后面用倒引号括住，date就变成了一个命令。同样的还有 c=<code>pwd</code>。另一种方式是 c=$(pwd) 也是把pwd变成命令，不加()括住就是变量。</li>
+<li>即<strong>倒引号括住</strong> 和 <strong>$()</strong> 的效果是一样的。</li>
+<li>文件系统：OS来管理使用文件所用的规范</li>
+<li>Linux每个文件都有一个inode号(索引节点)，是唯一的，用来区别别的文件。</li>
+<li>ip地址与域名的关系是<strong>一对多</strong>的关系，同一个ip地址可以对应多个域名，一个域名只能对应一个ip地址</li>
+<li>源本质是个服务器</li>
+<li>
+<ul>
+<li>.lib是静态连接库文件，.dll是动态连接库文件</li>
+</ul>
+</li>
+<li>C<ins>是C语言的继承，它既可以进行C语言的过程化程序设计，又可以进行以抽象数据类型为特点的基于对象的程序设计，还可以进行以继承和多态为特点的面向对象的程序设计。C</ins>擅长面向对象程序设计的同时，还可以进行基于过程的程序设计，因而C++就适应的问题规模而论，大小由之。</li>
+<li>C语言编译过程：
+<ol>
+<li><strong>预处理程序</strong>（Preprocessor）读取C语言源文件，对其中以“#”开头的指令（伪指令）和特殊符号进行处理。伪指令主要包括文件包含、宏定义和条件编译指令。</li>
+<li>生成<strong>预处理文件</strong></li>
+<li><strong>编译程序</strong>（Compiler）对预处理之后的预处理文件进行词法分析和语法分析，试图找出所有不符合语法规则的部分。在确定各成分都符合语法规则后，将其“翻译”为功能等价的中间代码表示或者汇编代码。</li>
+<li>生成<strong>汇编代码</strong></li>
+<li><strong>汇编程序</strong>（Assembler）把汇编语言代码翻译成目标机器代码的过程。</li>
+<li>生成<strong>目标文件</strong></li>
+<li><strong>连接程序</strong>将一个文件中引用的符号（如变量或函数调用）与该符号在另外一个文件(如函数文件)中的定义连接起来，从而使有关的目标文件连成一个整体，最终成为可被操作系统执行的可执行文件。</li>
+<li>生成<strong>可执行文件</strong></li>
+</ol>
+</li>
+<li>gcc 与 g++ 分别是 gnu 的 c &amp; c++ 编译器 gcc/g++ 在执行编译工作的时候，总共需要4步：按照gcc的<strong>选项作用</strong>所对应的编译阶段，可将gcc的选项分为四组：预处理选项、编译选项、优化选项和连接选项。详细见下:
+<ol>
+<li>预处理,生成 .i 的文件</li>
+<li>将预处理后的文件转换成汇编语言, 生成文件 .s</li>
+<li>有汇编变为目标代码(机器代码)生成 .o 的文件</li>
+<li>连接目标代码, 生成可执行程序</li>
+</ol>
+</li>
+<li>$ gcc  f1.c f2.c  （针对C语言源程序）执行完成后，生成默认的可执行文件a.out。-o 可以指定连接程序最后生成的可执行文件名称为file(可不带.out后缀)，而不是默认的a.out</li>
+<li>不像 Windows，Linux 不以文件后缀来区分可执行文件，Linux 下的可执行文件后缀理论上可以是任意的，这里的.out只是用来表明它是 GCC 的输出文件。不管源文件的名字是什么，GCC 生成的可执行文件的默认名字始终是a.out</li>
+<li>虽然Linux 不以后缀名区分文件，但是最好带上正确的后缀名，一来容易区分，而来vim这种文编编辑器可以对不同后缀的文件采用不同的功能和高亮</li>
+<li>一个有趣的事实就是，就本质而言，gcc和g<ins>并不是编译器，也不是编译器的集合，它们只是一种驱动器，根据参数中要编译的文件的类型，调用对应的GUN编译器而已，更准确的说法是：gcc调用了C编译器，而g</ins>调用了C++编译器。比如，用gcc编译一个c文件的话，会有以下几个步骤：
+<ol>
+<li>调用预处理器</li>
+<li>调用编译器</li>
+<li>调用汇编器</li>
+<li>调用连接</li>
+</ol>
+</li>
+<li>进程是<strong>已启动</strong>的<strong>可执行程序</strong>的运行实例。进程有以下组成部分：
+<ol>
+<li>已分配内存的地址空间；</li>
+<li>安全属性，包括所有权凭据和特权；</li>
+<li>程序代码的一个或多个执行线程；</li>
+<li>进程状态</li>
+</ol>
+</li>
+<li>程序： 二进制文件，静态。进程： 是程序运行的过程， 动态，有生命周期及运行状态。</li>
+<li>ps 和 top 的区别：
+<ol>
+<li>ps看到的是命令执行瞬间的进程信息,而top可以持续的监视，默认状态显示的是cpu密集型的进程，并且每5秒钟更新一次。</li>
+<li>ps只是查看进程,而top还可以监视系统性能,如平均负载,cpu和内存的消耗</li>
+<li>top还可以操作进程,如改变优先级(命令r)和关闭进程(命令k)</li>
+<li>ps主要是查看进程的，关注点在于查看需要查看的进程。top主要看cpu,内存使用情况，及占用资源最多的进程由高到低排序，关注点在于资源占用情况</li>
+</ol>
+</li>
+<li>Ctrl-l 等价于 clear</li>
+<li>控制字符(ctrl z ctrl c ctrl d 等等)都是可以通过stty命令更改的，可在终端中输入命令&quot;stty -a&quot;查看终端配置。</li>
+<li>ctrl + z 挂起键，给前台进程组中所有进程发送SIGTSTP信号, 并挂起进程。被挂起的进程并没有真正结束，可以使用fg或bg命令恢复被挂起的进程。</li>
+<li>fg将后台中的命令调至前台继续运行, bg将一个在后台暂停的命令，变成继续执行</li>
+<li>[1]+  已停止               yes ok  其中 [1] 代表 工作号</li>
+<li>一个终端上的程序在另一个终端上用 ps 命令看不到，但是用 top 或者 glances 可以看到</li>
+<li>C/C++包含头文件中&lt;&gt;和&quot;“的区别: 有的程序用&lt;&gt;，有的却用”&quot;，那么二者到底什么区别呢，什么情况下使用呢？&lt;&gt;和&quot;“表示编译器在搜索头文件时的顺序不同，&lt;&gt;表示从系统目录下开始搜索，然后再搜索PATH环境变量所列出的目录，不搜索当前目录，”“是表示从当前目录开始搜索，然后是系统目录和PATH环境变量所列出的目录。所以，系统头文件一般用&lt;&gt;，用户自己定义的则可以使用”&quot;，加快搜索速度。</li>
+<li>对于类似let x+y这样的写法，Shell 虽然计算了 x+y 的值，但却将结果丢弃；若不想这样，可以使用let sum=x+y将 x+y 的结果保存在变量 sum 中。这种情况下 (( )) 显然更加灵活，可以使用$((x+y))来获取 x+y 的结果</li>
+<li>只有使用$((算术表达式))形式才能返回表达式的值，比如  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span>  <span class="string">&quot;((12*9))&quot;</span></span></span><br><span class="line">    ((12*9))</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span>  <span class="string">&quot;<span class="subst">$((12*9)</span>)&quot;</span></span></span><br><span class="line">    108 </span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">DifferentLee</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/07/22/Linux_Learn/">http://example.com/2022/07/22/Linux_Learn/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">下水道灵魂画手</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/./img/TaylorSwift3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/22/Handshake%20lemma_Deduction/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">握手定理推论证明</div></div></a></div><div class="next-post pull-right"><a href="/2022/07/22/PHP_SetCookie_Problem/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">关于php学习中setcookie的疑惑</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/WangYouSheng.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">DifferentLee</div><div class="author-info__description">一次编译，到处运行</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/DifferentLee" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:liyiraner@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.facebook.com/profile.php?id=100083266883262" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a><a class="social-icon" href="https://www.instagram.com/accounts/login/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram-square"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/01/PM2.5_five_cities/" title="CN五大城市PM2.5数据分析"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CN五大城市PM2.5数据分析"/></a><div class="content"><a class="title" href="/2022/12/01/PM2.5_five_cities/" title="CN五大城市PM2.5数据分析">CN五大城市PM2.5数据分析</a><time datetime="2022-12-01T07:42:10.000Z" title="发表于 2022-12-01 15:42:10">2022-12-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/24/Web_PHP_Learn/" title="Web程序设计"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Web程序设计"/></a><div class="content"><a class="title" href="/2022/09/24/Web_PHP_Learn/" title="Web程序设计">Web程序设计</a><time datetime="2022-09-24T07:42:10.000Z" title="发表于 2022-09-24 15:42:10">2022-09-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/19/C_Print_icon/" title="C语言控制台打印图标小技巧"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/TaylorSwift3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言控制台打印图标小技巧"/></a><div class="content"><a class="title" href="/2022/09/19/C_Print_icon/" title="C语言控制台打印图标小技巧">C语言控制台打印图标小技巧</a><time datetime="2022-09-18T16:00:00.000Z" title="发表于 2022-09-19 00:00:00">2022-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/05/CLion-Single-File-Execution/" title="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题"/></a><div class="content"><a class="title" href="/2022/09/05/CLion-Single-File-Execution/" title="解决CLion中建立多个c/cpp文件(多个main函数共存)的问题">解决CLion中建立多个c/cpp文件(多个main函数共存)的问题</a><time datetime="2022-09-05T07:08:12.000Z" title="发表于 2022-09-05 15:08:12">2022-09-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/30/FunctionLogin-1/" title="小作业1-登录功能(控制台)"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/DustinPoirier2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="小作业1-登录功能(控制台)"/></a><div class="content"><a class="title" href="/2022/08/30/FunctionLogin-1/" title="小作业1-登录功能(控制台)">小作业1-登录功能(控制台)</a><time datetime="2022-08-30T10:30:31.000Z" title="发表于 2022-08-30 18:30:31">2022-08-30</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/./img/TaylorSwift3.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By DifferentLee</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">见到您，我高兴坏了😍</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script id="canvas_nest" defer="defer" color="255,255,0" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="咱,俩,谁,是,小,牛,马" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
